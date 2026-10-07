@@ -61,21 +61,37 @@ function CompetitionResults({
   deps: AppDeps;
 }) {
   const [outcome, setOutcome] = useState<CompetitionOutcome | undefined>();
+  const [loading, setLoading] = useState(true);
+  // Bumped by Retry to reload just this Competition.
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let current = true;
-    setOutcome(undefined);
+    // Keep whatever is already shown until the new outcome arrives.
+    setLoading(true);
     void service.loadCompetition(competition, DEFAULT_WINDOW).then((next) => {
-      if (current) setOutcome(next);
+      if (!current) return;
+      setOutcome(next);
+      setLoading(false);
     });
     return () => {
       current = false;
     };
-  }, [service, competition]);
+  }, [service, competition, attempt]);
 
   return (
     <Section title={competition.name} level={3}>
-      {outcome === undefined && <p role="status">Loading results…</p>}
+      {loading && (
+        <p role="status">{outcome === undefined ? 'Loading results…' : 'Retrying…'}</p>
+      )}
+      {outcome?.status === 'error' && (
+        <div className="competition-error">
+          <p role="alert">{outcome.message}</p>
+          <button type="button" onClick={() => setAttempt((n) => n + 1)} disabled={loading}>
+            Retry
+          </button>
+        </div>
+      )}
       {outcome?.status === 'results' && (
         <ul className="results">
           {outcome.results.map((result) => (
