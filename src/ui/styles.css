@@ -22,6 +22,41 @@ body {
   border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
 }
 
+.team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.team-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+  object-fit: contain;
+}
+
+/* Full names on wide screens, short names below the mobile breakpoint. */
+.team-name-short {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  .team-name-full {
+    display: none;
+  }
+
+  .team-name-short {
+    display: inline;
+  }
+}
+
+.extra-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
 .window-selector {
   display: flex;
   flex-wrap: wrap;
