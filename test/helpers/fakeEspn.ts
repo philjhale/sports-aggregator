@@ -2,9 +2,9 @@ import gallagherPremiershipHeader from '../fixtures/espn/gallagher-premiership-h
 import nbaHeader from '../fixtures/espn/nba-header.json';
 import nflHeader from '../fixtures/espn/nfl-header.json';
 import premierLeagueHeader from '../fixtures/espn/premier-league-header.json';
-import premierLeague20261005 from '../fixtures/espn/premier-league-scoreboard-20261005.json';
-import premierLeague20261006 from '../fixtures/espn/premier-league-scoreboard-20261006.json';
-import premierLeague20261007 from '../fixtures/espn/premier-league-scoreboard-20261007.json';
+import premierLeague20260918 from '../fixtures/espn/premier-league-scoreboard-20260918.json';
+import premierLeague20260919 from '../fixtures/espn/premier-league-scoreboard-20260919.json';
+import premierLeague20260920 from '../fixtures/espn/premier-league-scoreboard-20260920.json';
 
 /**
  * A fake `fetch` that answers ESPN URLs from fixtures.
@@ -38,9 +38,9 @@ export const defaultHeaderFixtures: Record<string, unknown> = {
 };
 
 export const defaultScoreboardFixtures: Record<string, unknown> = {
-  'soccer/eng.1/20261005': premierLeague20261005,
-  'soccer/eng.1/20261006': premierLeague20261006,
-  'soccer/eng.1/20261007': premierLeague20261007,
+  'soccer/eng.1/20260918': premierLeague20260918,
+  'soccer/eng.1/20260919': premierLeague20260919,
+  'soccer/eng.1/20260920': premierLeague20260920,
 };
 
 export function createFakeEspn(options: FakeEspnOptions = {}): FakeEspn {
