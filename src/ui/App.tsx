@@ -4,6 +4,7 @@ import { createResultsService } from '../core/resultsService';
 import { createSettingsStore } from '../core/settings';
 import type { CompetitionOutcome, ResultsService } from '../core/resultsService';
 import type { Competition, CompetitionConfig, WindowDays } from '../core/types';
+import { Footer } from './Footer';
 import { ResultRow } from './ResultRow';
 import { WindowSelector } from './WindowSelector';
 
@@ -51,6 +52,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
           </Section>
         ))}
       </main>
+      <Footer />
     </div>
   );
 }
