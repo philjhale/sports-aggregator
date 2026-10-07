@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { App } from '../../src/ui/App';
 import type { AppDeps } from '../../src/ui/App';
+import type { CompetitionConfig } from '../../src/core/types';
 import { createFakeEspn } from './fakeEspn';
 import type { FakeEspn } from './fakeEspn';
 import { createMemoryStorage } from './memoryStorage';
@@ -15,6 +16,8 @@ export interface RenderAppOptions {
   locale?: string;
   espn?: FakeEspn;
   storage?: Storage;
+  /** Competition config. Default: the app's launch config. */
+  config?: CompetitionConfig;
 }
 
 export const DEFAULT_NOW = '2026-10-07T12:00:00Z';
@@ -35,6 +38,6 @@ export function renderApp(options: RenderAppOptions = {}) {
     storage,
   };
   const user = userEvent.setup();
-  const view = render(<App deps={deps} />);
+  const view = render(<App deps={deps} config={options.config} />);
   return { ...view, espn, storage, user, deps };
 }

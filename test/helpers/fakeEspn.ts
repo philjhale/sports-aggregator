@@ -1,4 +1,7 @@
+import gallagherPremiershipHeader from '../fixtures/espn/gallagher-premiership-header.json';
 import nbaHeader from '../fixtures/espn/nba-header.json';
+import nflHeader from '../fixtures/espn/nfl-header.json';
+import premierLeagueHeader from '../fixtures/espn/premier-league-header.json';
 
 /**
  * A fake `fetch` that answers ESPN URLs from fixtures.
@@ -26,6 +29,9 @@ export interface FakeEspn {
 
 export const defaultHeaderFixtures: Record<string, unknown> = {
   'basketball/nba': nbaHeader,
+  'football/nfl': nflHeader,
+  'soccer/eng.1': premierLeagueHeader,
+  'rugby/267979': gallagherPremiershipHeader,
 };
 
 export function createFakeEspn(options: FakeEspnOptions = {}): FakeEspn {

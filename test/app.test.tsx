@@ -1,5 +1,6 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import type { FakeEspn } from './helpers/fakeEspn';
 import { renderApp } from './helpers/renderApp';
 
 async function nbaResults() {
@@ -74,13 +75,16 @@ describe('NBA Results for the default Window', () => {
   });
 });
 
+const nbaRequests = (espn: FakeEspn) =>
+  espn.headerRequests().filter((u) => u.searchParams.get('league') === 'nba');
+
 describe('ESPN requests', () => {
   it("makes one header request covering the 3-day Window in the viewer's timezone", async () => {
     const { espn } = renderApp({ now: '2026-10-07T12:00:00Z', timeZone: 'Europe/London' });
     await nbaResults();
 
-    expect(espn.requests).toHaveLength(1);
-    const [url] = espn.requests;
+    expect(nbaRequests(espn)).toHaveLength(1);
+    const [url] = nbaRequests(espn);
     expect(url!.origin + url!.pathname).toBe(
       'https://site.web.api.espn.com/apis/v2/scoreboard/header',
     );
@@ -96,17 +100,17 @@ describe('ESPN requests', () => {
   it('spans a month boundary', async () => {
     const { espn } = renderApp({ now: '2026-10-01T09:00:00Z', timeZone: 'Europe/London' });
     await screen.findByRole('region', { name: 'NBA' });
-    await waitFor(() => expect(espn.requests).toHaveLength(1));
+    await waitFor(() => expect(nbaRequests(espn)).toHaveLength(1));
 
-    expect(espn.requests[0]!.searchParams.get('dates')).toBe('20260929-20261001');
+    expect(nbaRequests(espn)[0]!.searchParams.get('dates')).toBe('20260929-20261001');
   });
 
   it("uses the viewer's local today, not UTC's", async () => {
     // 01:30 on 1 Oct in Sydney is still 30 Sep in UTC.
     const { espn } = renderApp({ now: '2026-09-30T15:30:00Z', timeZone: 'Australia/Sydney' });
-    await waitFor(() => expect(espn.requests).toHaveLength(1));
+    await waitFor(() => expect(nbaRequests(espn)).toHaveLength(1));
 
-    const url = espn.requests[0]!;
+    const url = nbaRequests(espn)[0]!;
     expect(url.searchParams.get('dates')).toBe('20260929-20261001');
     expect(url.searchParams.get('tz')).toBe('Australia/Sydney');
   });

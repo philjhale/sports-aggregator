@@ -1,0 +1,324 @@
+{
+  "sports": [
+    {
+      "id": "600",
+      "uid": "s:600",
+      "name": "Soccer",
+      "slug": "soccer",
+      "leagues": [
+        {
+          "id": "700",
+          "uid": "s:600~l:700",
+          "name": "English Premier League",
+          "abbreviation": "EPL",
+          "shortName": "EPL",
+          "slug": "eng.1",
+          "isTournament": false,
+          "events": [
+            {
+              "id": "740101",
+              "uid": "s:600~l:700~e:740101",
+              "date": "2026-10-03T14:00Z",
+              "timeValid": true,
+              "season": 2026,
+              "seasonType": 1,
+              "name": "Brighton & Hove Albion at Arsenal",
+              "shortName": "BHA @ ARS",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+4'",
+              "link": "https://www.espn.com/soccer/match/_/gameId/740101/brighton-hove-albion-arsenal",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "90'+4'",
+                "period": 2,
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "359",
+                  "uid": "s:600~l:700~t:359",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "displayName": "Arsenal",
+                  "name": "Arsenal",
+                  "abbreviation": "ARS",
+                  "location": "Arsenal",
+                  "shortDisplayName": "Arsenal",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
+                  "score": "2"
+                },
+                {
+                  "id": "331",
+                  "uid": "s:600~l:700~t:331",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "displayName": "Brighton & Hove Albion",
+                  "name": "Brighton",
+                  "abbreviation": "BHA",
+                  "location": "Brighton & Hove Albion",
+                  "shortDisplayName": "Brighton",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
+                  "score": "0"
+                }
+              ]
+            },
+            {
+              "id": "740102",
+              "uid": "s:600~l:700~e:740102",
+              "date": "2026-10-05T19:00Z",
+              "timeValid": true,
+              "season": 2026,
+              "seasonType": 1,
+              "name": "Liverpool at Everton",
+              "shortName": "LIV @ EVE",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+4'",
+              "link": "https://www.espn.com/soccer/match/_/gameId/740102/liverpool-everton",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "90'+4'",
+                "period": 2,
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "368",
+                  "uid": "s:600~l:700~t:368",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "displayName": "Everton",
+                  "name": "Everton",
+                  "abbreviation": "EVE",
+                  "location": "Everton",
+                  "shortDisplayName": "Everton",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png",
+                  "score": "1"
+                },
+                {
+                  "id": "364",
+                  "uid": "s:600~l:700~t:364",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "displayName": "Liverpool",
+                  "name": "Liverpool",
+                  "abbreviation": "LIV",
+                  "location": "Liverpool",
+                  "shortDisplayName": "Liverpool",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+                  "score": "1"
+                }
+              ]
+            },
+            {
+              "id": "740103",
+              "uid": "s:600~l:700~e:740103",
+              "date": "2026-10-06T19:00Z",
+              "timeValid": true,
+              "season": 2026,
+              "seasonType": 1,
+              "name": "Fulham at Manchester City",
+              "shortName": "FUL @ MNC",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+4'",
+              "link": "https://www.espn.com/soccer/match/_/gameId/740103/fulham-manchester-city",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "90'+4'",
+                "period": 2,
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "382",
+                  "uid": "s:600~l:700~t:382",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "displayName": "Manchester City",
+                  "name": "Man City",
+                  "abbreviation": "MNC",
+                  "location": "Manchester City",
+                  "shortDisplayName": "Man City",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
+                  "score": "3"
+                },
+                {
+                  "id": "370",
+                  "uid": "s:600~l:700~t:370",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "displayName": "Fulham",
+                  "name": "Fulham",
+                  "abbreviation": "FUL",
+                  "location": "Fulham",
+                  "shortDisplayName": "Fulham",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
+                  "score": "1"
+                }
+              ]
+            },
+            {
+              "id": "740104",
+              "uid": "s:600~l:700~e:740104",
+              "date": "2026-10-06T19:45Z",
+              "timeValid": true,
+              "season": 2026,
+              "seasonType": 1,
+              "name": "Aston Villa at Newcastle United",
+              "shortName": "AVL @ NEW",
+              "status": "post",
+              "summary": "Postponed",
+              "period": 0,
+              "clock": "",
+              "link": "https://www.espn.com/soccer/match/_/gameId/740104/aston-villa-newcastle-united",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 0,
+                "type": {
+                  "id": "6",
+                  "name": "STATUS_POSTPONED",
+                  "state": "post",
+                  "completed": false,
+                  "description": "Postponed",
+                  "detail": "Postponed",
+                  "shortDetail": "Postponed"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "361",
+                  "uid": "s:600~l:700~t:361",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "displayName": "Newcastle United",
+                  "name": "Newcastle",
+                  "abbreviation": "NEW",
+                  "location": "Newcastle United",
+                  "shortDisplayName": "Newcastle",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png",
+                  "score": "0"
+                },
+                {
+                  "id": "362",
+                  "uid": "s:600~l:700~t:362",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "displayName": "Aston Villa",
+                  "name": "Aston Villa",
+                  "abbreviation": "AVL",
+                  "location": "Aston Villa",
+                  "shortDisplayName": "Aston Villa",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+                  "score": "0"
+                }
+              ]
+            },
+            {
+              "id": "740105",
+              "uid": "s:600~l:700~e:740105",
+              "date": "2026-10-07T19:00Z",
+              "timeValid": true,
+              "season": 2026,
+              "seasonType": 1,
+              "name": "Tottenham Hotspur at Chelsea",
+              "shortName": "TOT @ CHE",
+              "status": "pre",
+              "summary": "10/7 - 3:00 PM EDT",
+              "period": 0,
+              "clock": "",
+              "link": "https://www.espn.com/soccer/match/_/gameId/740105/tottenham-hotspur-chelsea",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 0,
+                "type": {
+                  "id": "1",
+                  "name": "STATUS_SCHEDULED",
+                  "state": "pre",
+                  "completed": false,
+                  "description": "Scheduled",
+                  "detail": "Wed, October 7th at 3:00 PM EDT",
+                  "shortDetail": "10/7 - 3:00 PM EDT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "363",
+                  "uid": "s:600~l:700~t:363",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "displayName": "Chelsea",
+                  "name": "Chelsea",
+                  "abbreviation": "CHE",
+                  "location": "Chelsea",
+                  "shortDisplayName": "Chelsea",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
+                  "score": ""
+                },
+                {
+                  "id": "367",
+                  "uid": "s:600~l:700~t:367",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "displayName": "Tottenham Hotspur",
+                  "name": "Spurs",
+                  "abbreviation": "TOT",
+                  "location": "Tottenham Hotspur",
+                  "shortDisplayName": "Spurs",
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/367.png",
+                  "score": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
