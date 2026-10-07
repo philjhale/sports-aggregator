@@ -17,7 +17,8 @@ export interface AppDeps {
   timeZone: string;
   /** Locale for formatting dates; undefined means the browser default. */
   locale?: string;
-  storage: Storage;
+  /** Browser storage; undefined when the browser blocks it. */
+  storage: Storage | undefined;
 }
 
 export interface AppProps {

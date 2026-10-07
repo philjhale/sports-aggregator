@@ -121,7 +121,9 @@ function isResultLike(value: unknown): boolean {
     typeof (t as Record<string, unknown>).score === 'number';
   return (
     typeof r.id === 'string' &&
+    typeof r.competitionId === 'string' &&
     typeof r.kickoff === 'string' &&
+    (r.winner === 'home' || r.winner === 'away' || r.winner === 'draw') &&
     typeof r.matchDetailsUrl === 'string' &&
     team(r.home) &&
     team(r.away)

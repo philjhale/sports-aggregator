@@ -160,6 +160,14 @@ describe('Storage problems never break Results', () => {
     ['corrupt JSON', '{not json'],
     ['another schema version', JSON.stringify({ version: 0, results: [] })],
     ['the wrong shape', JSON.stringify({ version: 1, results: [{ id: 7 }] })],
+    [
+      'a Result with an unknown winner',
+      cacheValue([{ ...cachedResult('2026-10-05T18:00:00Z', 'Cached Hosts'), winner: 'nobody' as never }]),
+    ],
+    [
+      'a Result with no Competition id',
+      cacheValue([{ ...cachedResult('2026-10-05T18:00:00Z', 'Cached Hosts'), competitionId: undefined as never }]),
+    ],
   ])('treats a cached day holding %s as uncached', async (_, stored) => {
     const storage = createMemoryStorage({ [cacheKey('nba', 'Europe/London', '2026-10-05')]: stored });
     const { espn } = renderApp({ storage });
