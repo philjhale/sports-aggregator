@@ -1,0 +1,171 @@
+{
+  "sports": [
+    {
+      "id": "40",
+      "uid": "s:40",
+      "guid": "f3a4a6a4-4fb5-3d6e-a0d4-1a1a1a1a1a1a",
+      "name": "Basketball",
+      "slug": "basketball",
+      "leagues": [
+        {
+          "id": "46",
+          "uid": "s:40~l:46",
+          "name": "National Basketball Association",
+          "abbreviation": "NBA",
+          "shortName": "NBA",
+          "slug": "nba",
+          "isTournament": false,
+          "smartdates": ["2026-10-05T07:00Z", "2026-10-06T07:00Z", "2026-10-07T07:00Z"],
+          "events": [
+            {
+              "id": "401800003",
+              "uid": "s:40~l:46~e:401800003",
+              "date": "2026-10-04T19:00Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "Chicago Bulls at Miami Heat",
+              "shortName": "CHI @ MIA",
+              "status": "post",
+              "summary": "Final",
+              "period": 4,
+              "clock": "0.0",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800003/bulls-heat",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 4,
+                "type": { "id": "3", "name": "STATUS_FINAL", "state": "post", "completed": true, "description": "Final", "detail": "Final", "shortDetail": "Final" }
+              },
+              "competitors": [
+                { "id": "14", "uid": "s:40~l:46~t:14", "type": "team", "order": 0, "homeAway": "home", "winner": true, "displayName": "Miami Heat", "name": "Heat", "abbreviation": "MIA", "location": "Miami", "shortDisplayName": "Heat", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png", "score": "99" },
+                { "id": "4", "uid": "s:40~l:46~t:4", "type": "team", "order": 1, "homeAway": "away", "winner": false, "displayName": "Chicago Bulls", "name": "Bulls", "abbreviation": "CHI", "location": "Chicago", "shortDisplayName": "Bulls", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png", "score": "95" }
+              ]
+            },
+            {
+              "id": "401800001",
+              "uid": "s:40~l:46~e:401800001",
+              "date": "2026-10-05T23:30Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "New York Knicks at Boston Celtics",
+              "shortName": "NY @ BOS",
+              "status": "post",
+              "summary": "Final",
+              "period": 4,
+              "clock": "0.0",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800001/knicks-celtics",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 4,
+                "type": { "id": "3", "name": "STATUS_FINAL", "state": "post", "completed": true, "description": "Final", "detail": "Final", "shortDetail": "Final" }
+              },
+              "competitors": [
+                { "id": "2", "uid": "s:40~l:46~t:2", "type": "team", "order": 0, "homeAway": "home", "winner": true, "displayName": "Boston Celtics", "name": "Celtics", "abbreviation": "BOS", "location": "Boston", "shortDisplayName": "Celtics", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bos.png", "score": "108" },
+                { "id": "18", "uid": "s:40~l:46~t:18", "type": "team", "order": 1, "homeAway": "away", "winner": false, "displayName": "New York Knicks", "name": "Knicks", "abbreviation": "NY", "location": "New York", "shortDisplayName": "Knicks", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png", "score": "101" }
+              ]
+            },
+            {
+              "id": "401800005",
+              "uid": "s:40~l:46~e:401800005",
+              "date": "2026-10-06T00:00Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "Phoenix Suns at Utah Jazz",
+              "shortName": "PHX @ UTAH",
+              "status": "post",
+              "summary": "Postponed",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800005/suns-jazz",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 0,
+                "type": { "id": "6", "name": "STATUS_POSTPONED", "state": "post", "completed": false, "description": "Postponed", "detail": "Postponed", "shortDetail": "Postponed" }
+              },
+              "competitors": [
+                { "id": "26", "uid": "s:40~l:46~t:26", "type": "team", "order": 0, "homeAway": "home", "displayName": "Utah Jazz", "name": "Jazz", "abbreviation": "UTAH", "location": "Utah", "shortDisplayName": "Jazz", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png", "score": "0" },
+                { "id": "21", "uid": "s:40~l:46~t:21", "type": "team", "order": 1, "homeAway": "away", "displayName": "Phoenix Suns", "name": "Suns", "abbreviation": "PHX", "location": "Phoenix", "shortDisplayName": "Suns", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phx.png", "score": "0" }
+              ]
+            },
+            {
+              "id": "401800002",
+              "uid": "s:40~l:46~e:401800002",
+              "date": "2026-10-06T23:00Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "Los Angeles Lakers at Golden State Warriors",
+              "shortName": "LAL @ GS",
+              "status": "post",
+              "summary": "Final/OT",
+              "period": 5,
+              "clock": "0.0",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800002/lakers-warriors",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 5,
+                "type": { "id": "3", "name": "STATUS_FINAL", "state": "post", "completed": true, "description": "Final", "detail": "Final/OT", "shortDetail": "Final/OT" }
+              },
+              "competitors": [
+                { "id": "9", "uid": "s:40~l:46~t:9", "type": "team", "order": 0, "homeAway": "home", "winner": false, "displayName": "Golden State Warriors", "name": "Warriors", "abbreviation": "GS", "location": "Golden State", "shortDisplayName": "Warriors", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png", "score": "118" },
+                { "id": "13", "uid": "s:40~l:46~t:13", "type": "team", "order": 1, "homeAway": "away", "winner": true, "displayName": "Los Angeles Lakers", "name": "Lakers", "abbreviation": "LAL", "location": "Los Angeles", "shortDisplayName": "Lakers", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png", "score": "120" }
+              ]
+            },
+            {
+              "id": "401800006",
+              "uid": "s:40~l:46~e:401800006",
+              "date": "2026-10-07T10:30Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "Denver Nuggets at Dallas Mavericks",
+              "shortName": "DEN @ DAL",
+              "status": "in",
+              "summary": "5:12 - 3rd",
+              "period": 3,
+              "clock": "5:12",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800006/nuggets-mavericks",
+              "fullStatus": {
+                "clock": 312,
+                "displayClock": "5:12",
+                "period": 3,
+                "type": { "id": "2", "name": "STATUS_IN_PROGRESS", "state": "in", "completed": false, "description": "In Progress", "detail": "5:12 - 3rd Quarter", "shortDetail": "5:12 - 3rd" }
+              },
+              "competitors": [
+                { "id": "6", "uid": "s:40~l:46~t:6", "type": "team", "order": 0, "homeAway": "home", "displayName": "Dallas Mavericks", "name": "Mavericks", "abbreviation": "DAL", "location": "Dallas", "shortDisplayName": "Mavericks", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/dal.png", "score": "60" },
+                { "id": "7", "uid": "s:40~l:46~t:7", "type": "team", "order": 1, "homeAway": "away", "displayName": "Denver Nuggets", "name": "Nuggets", "abbreviation": "DEN", "location": "Denver", "shortDisplayName": "Nuggets", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/den.png", "score": "55" }
+              ]
+            },
+            {
+              "id": "401800004",
+              "uid": "s:40~l:46~e:401800004",
+              "date": "2026-10-07T23:30Z",
+              "timeValid": true,
+              "season": 2027,
+              "seasonType": 1,
+              "name": "Brooklyn Nets at Philadelphia 76ers",
+              "shortName": "BKN @ PHI",
+              "status": "pre",
+              "summary": "10/7 - 7:30 PM EDT",
+              "link": "https://www.espn.com/nba/game/_/gameId/401800004/nets-76ers",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "0.0",
+                "period": 0,
+                "type": { "id": "1", "name": "STATUS_SCHEDULED", "state": "pre", "completed": false, "description": "Scheduled", "detail": "Wed, October 7th at 7:30 PM EDT", "shortDetail": "10/7 - 7:30 PM EDT" }
+              },
+              "competitors": [
+                { "id": "20", "uid": "s:40~l:46~t:20", "type": "team", "order": 0, "homeAway": "home", "displayName": "Philadelphia 76ers", "name": "76ers", "abbreviation": "PHI", "location": "Philadelphia", "shortDisplayName": "76ers", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phi.png", "score": "" },
+                { "id": "17", "uid": "s:40~l:46~t:17", "type": "team", "order": 1, "homeAway": "away", "displayName": "Brooklyn Nets", "name": "Nets", "abbreviation": "BKN", "location": "Brooklyn", "shortDisplayName": "Nets", "logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png", "score": "" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
