@@ -30,12 +30,17 @@ export function App({ deps, config = competitionConfig }: AppProps) {
   const settings = useMemo(() => createSettingsStore(deps.storage), [deps.storage]);
   const [windowDays, setWindowDays] = useState<WindowDays>(() => settings.load().window);
   const changeWindow = (days: WindowDays) => setWindowDays(settings.update({ window: days }).window);
+  // Bumped by the refresh button; each Competition refetches when it changes.
+  const [refreshCount, setRefreshCount] = useState(0);
 
   return (
     <div className="app">
       <header>
         <h1>Sports Aggregator</h1>
         <WindowSelector value={windowDays} onChange={changeWindow} />
+        <button type="button" onClick={() => setRefreshCount((n) => n + 1)}>
+          Refresh
+        </button>
       </header>
       <main>
         {sections.map(({ sport, competitions }) => (
@@ -47,6 +52,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
                 service={service}
                 deps={deps}
                 windowDays={windowDays}
+                refreshCount={refreshCount}
               />
             ))}
           </Section>
@@ -62,11 +68,13 @@ function CompetitionResults({
   service,
   deps,
   windowDays,
+  refreshCount,
 }: {
   competition: Competition;
   service: ResultsService;
   deps: AppDeps;
   windowDays: WindowDays;
+  refreshCount: number;
 }) {
   const [outcome, setOutcome] = useState<CompetitionOutcome | undefined>();
 
@@ -79,7 +87,7 @@ function CompetitionResults({
     return () => {
       current = false;
     };
-  }, [service, competition, windowDays]);
+  }, [service, competition, windowDays, refreshCount]);
 
   return (
     <Section title={competition.name} level={3}>

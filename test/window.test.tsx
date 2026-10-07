@@ -109,7 +109,9 @@ describe('Remembering the Window', () => {
     await first.user.click(screen.getByRole('radio', { name: '7 days' }));
     first.unmount();
 
-    const { espn } = renderApp({ storage: first.storage });
+    // Carry over only the settings, so cached past days don't shrink the request.
+    const settingsOnly = createMemoryStorage({ [SETTINGS_KEY]: first.storage.getItem(SETTINGS_KEY)! });
+    const { espn } = renderApp({ storage: settingsOnly });
 
     expect(screen.getByRole('radio', { name: '7 days' })).toBeChecked();
     await waitFor(() => expect(nbaHeaderRequests(espn)).toHaveLength(1));

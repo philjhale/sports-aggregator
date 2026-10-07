@@ -8,9 +8,18 @@
  *
  * The outside world (fetch, clock, timezone, storage) is injected.
  */
+import { loadWithPastDayCache } from './cache';
 import { headerUrl, parseHeader } from './espn/adapter';
-import type { Competition, CompetitionConfig, Result, Sport, WindowDays } from './types';
-import { localDateOf, resolveWindow } from './window';
+import type {
+  Competition,
+  CompetitionConfig,
+  LocalDate,
+  ResolvedWindow,
+  Result,
+  Sport,
+  WindowDays,
+} from './types';
+import { resolveWindow } from './window';
 
 export type CompetitionOutcome =
   | { status: 'results'; results: Result[] }
@@ -50,13 +59,21 @@ export function createResultsService(deps: ResultsServiceDeps): ResultsService {
 
     async loadCompetition(competition, days) {
       const window = resolveWindow(days, deps.now(), deps.timeZone);
-      try {
-        const response = await deps.fetch(headerUrl(competition.source, window));
+      const fetchSpan = async (dates: LocalDate[]): Promise<Result[]> => {
+        const span: ResolvedWindow = { ...window, dates, start: dates[0] ?? window.end };
+        const response = await deps.fetch(headerUrl(competition.source, span));
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const inWindow = new Set(window.dates);
-        const results = parseHeader(await response.json(), competition)
-          .filter((r) => inWindow.has(localDateOf(new Date(r.kickoff), deps.timeZone)))
-          .sort((a, b) => b.kickoff.localeCompare(a.kickoff));
+        return parseHeader(await response.json(), competition);
+      };
+      try {
+        const results = (
+          await loadWithPastDayCache(window.dates, fetchSpan, {
+            storage: deps.storage,
+            competitionId: competition.id,
+            timeZone: deps.timeZone,
+            today: window.end,
+          })
+        ).sort((a, b) => b.kickoff.localeCompare(a.kickoff));
         return results.length > 0 ? { status: 'results', results } : { status: 'empty' };
       } catch {
         return { status: 'error', message: `Couldn't load ${competition.name} results.` };
