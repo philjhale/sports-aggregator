@@ -33,6 +33,8 @@ export function App({ deps, config = competitionConfig }: AppProps) {
   );
   const [windowDays, setWindowDays] = useState<WindowDays>(() => settings.load().window);
   const changeWindow = (days: WindowDays) => setWindowDays(settings.update({ window: days }).window);
+  // Bumped by the refresh button; each Competition refetches when it changes.
+  const [refreshCount, setRefreshCount] = useState(0);
   const [hidden, setHidden] = useState<ReadonlySet<string>>(() => new Set(settings.load().hidden));
   const toggleCompetition = (id: string, shown: boolean) => {
     const next = new Set(hidden);
@@ -47,6 +49,9 @@ export function App({ deps, config = competitionConfig }: AppProps) {
       <header>
         <h1>Sports Aggregator</h1>
         <WindowSelector value={windowDays} onChange={changeWindow} />
+        <button type="button" onClick={() => setRefreshCount((n) => n + 1)}>
+          Refresh
+        </button>
         <CompetitionsPanel config={config} hidden={hidden} onToggle={toggleCompetition} />
       </header>
       <main>
@@ -64,6 +69,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
                 service={service}
                 deps={deps}
                 windowDays={windowDays}
+                refreshCount={refreshCount}
               />
             ))}
           </Section>
@@ -79,11 +85,13 @@ function CompetitionResults({
   service,
   deps,
   windowDays,
+  refreshCount,
 }: {
   competition: Competition;
   service: ResultsService;
   deps: AppDeps;
   windowDays: WindowDays;
+  refreshCount: number;
 }) {
   const [outcome, setOutcome] = useState<CompetitionOutcome | undefined>();
 
@@ -96,7 +104,7 @@ function CompetitionResults({
     return () => {
       current = false;
     };
-  }, [service, competition, windowDays]);
+  }, [service, competition, windowDays, refreshCount]);
 
   return (
     <Section title={competition.name} level={3}>
