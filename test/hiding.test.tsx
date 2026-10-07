@@ -116,7 +116,7 @@ describe('Remembering hidden Competitions', () => {
     const storage = createMemoryStorage({
       [SETTINGS_KEY]: JSON.stringify({ window: 3, hidden: ['nhl', 'premier-league'] }),
     });
-    const { espn, user } = renderApp({ storage });
+    const { espn, user, unmount } = renderApp({ storage });
 
     expect(screen.queryByRole('region', { name: 'Premier League' })).not.toBeInTheDocument();
     for (const name of ['NBA', 'NFL', 'Gallagher Premiership']) {
@@ -124,10 +124,15 @@ describe('Remembering hidden Competitions', () => {
     }
     await waitFor(() => expect(espn.headerRequests()).toHaveLength(3));
 
-    // Unhiding the last hidden Competition leaves nothing hidden behind.
+    // Unhiding the last hidden Competition leaves nothing hidden on the next visit.
     const panel = within(await openCompetitionsPanel(user));
     await user.click(panel.getByRole('checkbox', { name: 'Premier League' }));
-    expect(JSON.parse(storage.getItem(SETTINGS_KEY)!).hidden).toEqual([]);
+    unmount();
+
+    renderApp({ storage });
+    for (const name of ['NBA', 'NFL', 'Premier League', 'Gallagher Premiership']) {
+      expect(screen.getByRole('region', { name })).toBeInTheDocument();
+    }
   });
 
   it.each([
