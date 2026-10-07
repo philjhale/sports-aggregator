@@ -1,6 +1,7 @@
 import { screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import nbaHeader from './fixtures/espn/nba-header.json';
+import premierLeagueHeader from './fixtures/espn/premier-league-header.json';
 import { createFakeEspn, defaultHeaderFixtures } from './helpers/fakeEspn';
 import { renderApp } from './helpers/renderApp';
 
@@ -26,6 +27,25 @@ function nbaWithoutLakersLogo() {
       if (competitor.displayName === 'Los Angeles Lakers') delete competitor.logo;
     }
   }
+  return header;
+}
+
+/**
+ * The Premier League fixture with Everton v Liverpool given another final
+ * status, shaped as ESPN reports soccer matches decided in extra time or on
+ * penalties.
+ */
+function premierLeagueWithEvertonStatus(name: string, detail: string) {
+  const header = structuredClone(premierLeagueHeader);
+  const event = header.sports[0]!.leagues[0]!.events.find((e) => e.id === '740102')!;
+  event.summary = detail;
+  event.fullStatus.type = {
+    ...event.fullStatus.type,
+    name,
+    description: detail,
+    detail,
+    shortDetail: detail,
+  };
   return header;
 }
 
@@ -57,6 +77,22 @@ describe('Result rows', () => {
 
     const row = await resultRow('NFL', 'Green Bay Packers');
     expect(within(row).getByText('OT')).toBeInTheDocument();
+  });
+
+  it.each([
+    ['extra time', 'STATUS_FINAL_AET', 'AET', 'AET'],
+    ['a penalty shootout', 'STATUS_FINAL_PEN', 'FT-Pens', 'Pens'],
+  ])('marks a football Result decided in %s', async (_, name, detail, marker) => {
+    const espn = createFakeEspn({
+      header: {
+        ...defaultHeaderFixtures,
+        'soccer/eng.1': premierLeagueWithEvertonStatus(name, detail),
+      },
+    });
+    renderApp({ espn });
+
+    const row = await resultRow('Premier League', 'Everton');
+    expect(within(row).getByText(marker)).toBeInTheDocument();
   });
 
   it('shows no marker for a Result decided in regulation', async () => {
@@ -98,5 +134,19 @@ describe('Result rows', () => {
       Array.from(row.querySelectorAll(selector)).map((el) => el.textContent);
     expect(text('.team-name-full')).toEqual(['Golden State Warriors', 'Los Angeles Lakers']);
     expect(text('.team-name-short')).toEqual(['Warriors', 'Lakers']);
+  });
+});
+
+describe('Status filtering', () => {
+  it('shows a completed match even when ESPN names its status a forfeit', async () => {
+    const espn = createFakeEspn({
+      header: {
+        ...defaultHeaderFixtures,
+        'soccer/eng.1': premierLeagueWithEvertonStatus('STATUS_FORFEIT', 'FT'),
+      },
+    });
+    renderApp({ espn });
+
+    expect(await resultRow('Premier League', 'Everton')).toHaveTextContent('Liverpool');
   });
 });

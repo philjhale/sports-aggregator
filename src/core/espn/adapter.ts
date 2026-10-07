@@ -114,14 +114,17 @@ function parseEvents(
   });
 }
 
+/**
+ * Statuses that are never a finished match, whatever `completed` says. Anything
+ * else is kept only if ESPN marks it completed (or, failing that, `post`).
+ */
 const DROPPED_STATUSES = new Set([
+  'STATUS_SCHEDULED',
+  'STATUS_IN_PROGRESS',
   'STATUS_POSTPONED',
   'STATUS_CANCELED',
-  'STATUS_CANCELLED',
   'STATUS_SUSPENDED',
   'STATUS_ABANDONED',
-  'STATUS_DELAYED',
-  'STATUS_FORFEIT',
 ]);
 
 function toResult(event: RawEvent, competition: Competition): Result | undefined {
@@ -185,11 +188,12 @@ function winnerOf(home: TeamResult, away: TeamResult): Winner {
   return home.score > away.score ? 'home' : 'away';
 }
 
-/** "Final/OT" → "OT", "Final/2OT" → "2OT", "AET" → "AET". */
+/** "Final/OT" → "OT", "Final/2OT" → "2OT", "AET" → "AET", "FT-Pens" → "Pens". */
 function extraTimeMarker(detail: string | undefined): string | undefined {
   if (!detail) return undefined;
   const suffix = detail.match(/\/\s*(\w+)\s*$/);
   if (suffix) return suffix[1];
+  if (/\bpens?\b/i.test(detail)) return 'Pens';
   return /^AET$/i.test(detail.trim()) ? 'AET' : undefined;
 }
 
