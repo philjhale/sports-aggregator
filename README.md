@@ -25,7 +25,7 @@ npm run typecheck   # tsc --noEmit
 
 Tests render the whole app in jsdom. `test/helpers/renderApp.tsx` injects a fake ESPN `fetch` (`fakeEspn.ts`), a fixed clock and timezone, and in-memory storage (`memoryStorage.ts`).
 
-The ESPN fixtures in `test/fixtures/espn/` are **hand-built** to match ESPN's response shapes, because ESPN wasn't reachable when they were written. Replace them with recorded (trimmed) real responses when you can.
+The ESPN fixtures in `test/fixtures/espn/` are trimmed recordings of live responses. Re-record them with `node test/fixtures/record.mjs`; see `test/fixtures/README.md`.
 
 ## Deploy
 
