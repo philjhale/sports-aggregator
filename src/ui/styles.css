@@ -21,3 +21,25 @@ body {
   padding: 0.5rem 0;
   border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
 }
+
+.window-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.75rem;
+}
+
+.window-selector__label {
+  font-weight: 600;
+}
+
+.window-selector__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.empty {
+  opacity: 0.7;
+}
