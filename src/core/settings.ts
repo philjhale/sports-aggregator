@@ -17,10 +17,13 @@ export const SETTINGS_KEY = 'sports-aggregator:settings:v1';
 
 export interface Settings {
   window: WindowDays;
+  /** Ids of Competitions the viewer has hidden. */
+  hidden: readonly string[];
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   window: DEFAULT_WINDOW,
+  hidden: [],
 };
 
 export interface SettingsStore {
@@ -30,9 +33,18 @@ export interface SettingsStore {
   update(changes: Partial<Settings>): Settings;
 }
 
-export function createSettingsStore(storage: Storage | undefined): SettingsStore {
+/**
+ * @param knownCompetitionIds When given, stored hidden ids not in this list
+ *   (e.g. a Competition since removed from config) are dropped on load.
+ */
+export function createSettingsStore(
+  storage: Storage | undefined,
+  knownCompetitionIds?: readonly string[],
+): SettingsStore {
   function load(): Settings {
-    return readSettings(readJson(storage));
+    const settings = readSettings(readJson(storage));
+    if (!knownCompetitionIds) return settings;
+    return { ...settings, hidden: settings.hidden.filter((id) => knownCompetitionIds.includes(id)) };
   }
 
   return {
@@ -62,9 +74,14 @@ function readSettings(raw: unknown): Settings {
   const stored = typeof raw === 'object' && raw !== null ? (raw as Record<string, unknown>) : {};
   return {
     window: isWindowDays(stored.window) ? stored.window : DEFAULT_SETTINGS.window,
+    hidden: isStringArray(stored.hidden) ? stored.hidden : DEFAULT_SETTINGS.hidden,
   };
 }
 
 function isWindowDays(value: unknown): value is WindowDays {
   return (WINDOW_DAYS as readonly unknown[]).includes(value);
+}
+
+function isStringArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((v) => typeof v === 'string');
 }
