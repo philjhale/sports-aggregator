@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { competitionConfig } from '../core/config';
 import { createResultsService } from '../core/resultsService';
 import { createSettingsStore } from '../core/settings';
@@ -94,21 +94,46 @@ function CompetitionResults({
   refreshCount: number;
 }) {
   const [outcome, setOutcome] = useState<CompetitionOutcome | undefined>();
+  const [loading, setLoading] = useState(true);
+  // Bumped by Retry to reload just this Competition.
+  const [attempt, setAttempt] = useState(0);
+
+  // A Retry keeps what is shown until the new outcome arrives; other reloads start afresh.
+  const retrying = useRef(false);
 
   useEffect(() => {
     let current = true;
-    setOutcome(undefined);
+    if (!retrying.current) setOutcome(undefined);
+    retrying.current = false;
+    setLoading(true);
     void service.loadCompetition(competition, windowDays).then((next) => {
-      if (current) setOutcome(next);
+      if (!current) return;
+      setOutcome(next);
+      setLoading(false);
     });
     return () => {
       current = false;
     };
-  }, [service, competition, windowDays, refreshCount]);
+  }, [service, competition, windowDays, refreshCount, attempt]);
+
+  const retry = () => {
+    retrying.current = true;
+    setAttempt((n) => n + 1);
+  };
 
   return (
     <Section title={competition.name} level={3}>
-      {outcome === undefined && <p role="status">Loading results…</p>}
+      {loading && (
+        <p role="status">{outcome === undefined ? 'Loading results…' : 'Retrying…'}</p>
+      )}
+      {outcome?.status === 'error' && (
+        <div className="competition-error">
+          <p role="alert">{outcome.message}</p>
+          <button type="button" onClick={retry} disabled={loading}>
+            Retry
+          </button>
+        </div>
+      )}
       {outcome?.status === 'results' && (
         <ul className="results">
           {outcome.results.map((result) => (

@@ -2,6 +2,9 @@ import gallagherPremiershipHeader from '../fixtures/espn/gallagher-premiership-h
 import nbaHeader from '../fixtures/espn/nba-header.json';
 import nflHeader from '../fixtures/espn/nfl-header.json';
 import premierLeagueHeader from '../fixtures/espn/premier-league-header.json';
+import premierLeague20261005 from '../fixtures/espn/premier-league-scoreboard-20261005.json';
+import premierLeague20261006 from '../fixtures/espn/premier-league-scoreboard-20261006.json';
+import premierLeague20261007 from '../fixtures/espn/premier-league-scoreboard-20261007.json';
 
 /**
  * A fake `fetch` that answers ESPN URLs from fixtures.
@@ -34,9 +37,15 @@ export const defaultHeaderFixtures: Record<string, unknown> = {
   'rugby/267979': gallagherPremiershipHeader,
 };
 
+export const defaultScoreboardFixtures: Record<string, unknown> = {
+  'soccer/eng.1/20261005': premierLeague20261005,
+  'soccer/eng.1/20261006': premierLeague20261006,
+  'soccer/eng.1/20261007': premierLeague20261007,
+};
+
 export function createFakeEspn(options: FakeEspnOptions = {}): FakeEspn {
   const header = options.header ?? defaultHeaderFixtures;
-  const scoreboard = options.scoreboard ?? {};
+  const scoreboard = options.scoreboard ?? defaultScoreboardFixtures;
   const requests: URL[] = [];
   let failing: ((url: URL) => boolean) | undefined;
 
