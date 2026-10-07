@@ -17,6 +17,10 @@ npm run test:watch  # Vitest, watch mode
 npm run typecheck   # tsc --noEmit
 ```
 
+## Deploy
+
+`.github/workflows/ci.yml` type-checks and tests every pull request. On push to `main` it also builds and deploys `dist/` to GitHub Pages using the official Pages actions. The site is served from the `/sports-aggregator/` project sub-path (Vite `base` in `vite.config.ts`). One-time setup: in the repo's Settings > Pages, set Source to "GitHub Actions".
+
 ## Layout
 
 - `src/core/`: framework-free domain core (types, Competition config, Window, results service). All ESPN knowledge lives in `src/core/espn/adapter.ts`.

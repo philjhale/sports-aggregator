@@ -4,6 +4,7 @@ import { createResultsService } from '../core/resultsService';
 import type { CompetitionOutcome, ResultsService } from '../core/resultsService';
 import type { Competition, CompetitionConfig } from '../core/types';
 import { DEFAULT_WINDOW } from '../core/types';
+import { Footer } from './Footer';
 import { ResultRow } from './ResultRow';
 
 /** Everything from the outside world the app needs. Injected so tests can fake it. */
@@ -45,6 +46,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
           </Section>
         ))}
       </main>
+      <Footer />
     </div>
   );
 }
