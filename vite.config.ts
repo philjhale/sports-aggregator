@@ -2,6 +2,8 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  // Served from the GitHub Pages project sub-path: https://<user>.github.io/sports-aggregator/
+  base: '/sports-aggregator/',
   plugins: [react()],
   test: {
     environment: 'jsdom',
