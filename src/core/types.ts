@@ -30,7 +30,7 @@ export interface CompetitionConfig {
   competitions: Competition[];
 }
 
-export interface TeamResult {
+export interface Team {
   name: string;
   shortName: string;
   logoUrl?: string;
@@ -44,8 +44,8 @@ export interface Result {
   competitionId: string;
   /** Kick-off instant, ISO 8601 UTC. */
   kickoff: string;
-  home: TeamResult;
-  away: TeamResult;
+  home: Team;
+  away: Team;
   /** E.g. `OT`, `2OT`, `AET`, as given by the source. */
   extraTime?: string;
   matchDetailsUrl: string;

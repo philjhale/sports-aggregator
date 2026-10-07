@@ -7,39 +7,75 @@
  * - the scoreboard header (`sports[0].leagues[0].events`), fetched once per Window;
  * - the site scoreboard (`events[].competitions[0]`), fetched once per day as a fallback.
  */
-import type {
-  Competition,
-  EspnSource,
-  LocalDate,
-  ResolvedWindow,
-  Result,
-  TeamResult,
-  Winner,
-} from '../types';
+import type { Competition, EspnSource, LocalDate, Result, Team, Winner } from '../types';
 import { compactDate } from '../window';
 
 export class EspnParseError extends Error {}
 
-/** One scoreboard-header request covering the whole Window. */
-export function headerUrl(source: EspnSource, window: ResolvedWindow): string {
+/**
+ * Fetch one Competition's Results kicking off on `dates` (oldest first,
+ * contiguous, local to `timeZone`) from ESPN.
+ *
+ * Primary: one scoreboard-header request for the whole range. If that fails
+ * (non-2xx, network error or unparseable body), fall back to one
+ * site-scoreboard request per date. Rejects only if the fallback fails too.
+ */
+export async function fetchResults(
+  fetchFn: typeof fetch,
+  competition: Competition,
+  dates: LocalDate[],
+  timeZone: string,
+): Promise<Result[]> {
+  const { source } = competition;
+  try {
+    return parseHeader(await getJson(fetchFn, headerUrl(source, dates, timeZone)), competition);
+  } catch {
+    const days = await Promise.all(
+      dates.map(async (date) =>
+        parseSiteScoreboard(
+          await getJson(fetchFn, siteScoreboardUrl(source, date, timeZone)),
+          competition,
+        ),
+      ),
+    );
+    return dedupe(days.flat());
+  }
+}
+
+async function getJson(fetchFn: typeof fetch, url: string): Promise<unknown> {
+  const response = await fetchFn(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
+  return response.json();
+}
+
+/** Per-day responses can overlap; keep the first Result for each id. */
+function dedupe(results: Result[]): Result[] {
+  const seen = new Set<string>();
+  return results.filter((r) => !seen.has(r.id) && seen.add(r.id));
+}
+
+/** One scoreboard-header request covering a range of dates. */
+function headerUrl(source: EspnSource, dates: LocalDate[], timeZone: string): string {
+  const start = dates[0]!;
+  const end = dates[dates.length - 1]!;
   const params = new URLSearchParams({
     sport: source.sport,
     league: source.league,
-    dates: `${compactDate(window.start)}-${compactDate(window.end)}`,
-    tz: window.timeZone,
+    dates: `${compactDate(start)}-${compactDate(end)}`,
+    tz: timeZone,
     limit: '1000',
   });
   return `https://site.web.api.espn.com/apis/v2/scoreboard/header?${params}`;
 }
 
 /** One site-scoreboard request for a single local date. It rejects ranges. */
-export function siteScoreboardUrl(source: EspnSource, date: LocalDate, timeZone: string): string {
+function siteScoreboardUrl(source: EspnSource, date: LocalDate, timeZone: string): string {
   const params = new URLSearchParams({ dates: compactDate(date), tz: timeZone });
   return `https://site.api.espn.com/apis/site/v2/sports/${source.sport}/${source.league}/scoreboard?${params}`;
 }
 
 /** Parse the scoreboard header shape (`sports[0].leagues[0].events`). */
-export function parseHeader(body: unknown, competition: Competition): Result[] {
+function parseHeader(body: unknown, competition: Competition): Result[] {
   const events = at(body, 'sports', 0, 'leagues', 0, 'events');
   if (!Array.isArray(events)) throw new EspnParseError('Unexpected ESPN header response');
   return parseEvents(events, competition, (event) => ({
@@ -60,7 +96,7 @@ export function parseHeader(body: unknown, competition: Competition): Result[] {
 }
 
 /** Parse the site scoreboard shape (`events[].competitions[0]`). */
-export function parseSiteScoreboard(body: unknown, competition: Competition): Result[] {
+function parseSiteScoreboard(body: unknown, competition: Competition): Result[] {
   const events = at(body, 'events');
   if (!Array.isArray(events)) throw new EspnParseError('Unexpected ESPN scoreboard response');
   return parseEvents(events, competition, (event) => {
@@ -157,7 +193,7 @@ function isFinished(statusType: unknown, state: string | undefined): boolean {
   return state === 'post';
 }
 
-function team(competitor: RawCompetitor | undefined): TeamResult | undefined {
+function team(competitor: RawCompetitor | undefined): Team | undefined {
   const name = competitor?.name;
   const score = Number.parseFloat(competitor?.score ?? '');
   if (!competitor || !name || !Number.isFinite(score)) return undefined;
@@ -183,7 +219,7 @@ function webLink(links: unknown): string | undefined {
   return str(at(summary, 'href'));
 }
 
-function winnerOf(home: TeamResult, away: TeamResult): Winner {
+function winnerOf(home: Team, away: Team): Winner {
   if (home.score === away.score) return 'draw';
   return home.score > away.score ? 'home' : 'away';
 }

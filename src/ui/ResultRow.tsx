@@ -1,4 +1,4 @@
-import type { Result, TeamResult } from '../core/types';
+import type { Result, Team } from '../core/types';
 
 export function ResultRow({
   result,
@@ -18,8 +18,8 @@ export function ResultRow({
 
   return (
     <li className="result">
-      <Team team={result.home} won={result.winner === 'home'} />
-      <Team team={result.away} won={result.winner === 'away'} />
+      <TeamLine team={result.home} won={result.winner === 'home'} />
+      <TeamLine team={result.away} won={result.winner === 'away'} />
       {result.extraTime && (
         <abbr className="extra-time" title="Decided beyond regulation time">
           {result.extraTime}
@@ -33,7 +33,7 @@ export function ResultRow({
   );
 }
 
-function Team({ team, won }: { team: TeamResult; won: boolean }) {
+function TeamLine({ team, won }: { team: Team; won: boolean }) {
   const content = (
     <>
       <span className="team-name">

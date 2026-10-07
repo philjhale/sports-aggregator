@@ -1,11 +1,12 @@
 /**
- * Past-day cache: a layer around "fetch Results for a span of local dates".
+ * Past-day cache: a layer around "fetch Results for these local dates".
  *
  * Days before yesterday are complete, so their Results are stored in browser
  * storage, one entry per Competition, timezone and local date. On a load,
- * cached days are reused and the wrapped fetch is asked only for the span from
- * the oldest uncached date to today (today and yesterday are never cached, so
- * the span always includes them). That keeps it to one request per Competition.
+ * cached days are reused and the wrapped fetch is asked only for the uncached
+ * dates, from the oldest uncached date to today (today and yesterday are never
+ * cached, so they are always included). That keeps it to one request per
+ * Competition.
  *
  * Tolerant by design: unavailable or full storage, bad JSON, a wrong shape or
  * another schema version never throws; the day is just treated as uncached.
@@ -18,7 +19,7 @@ export const CACHE_VERSION = 1;
 const KEY_PREFIX = `sports-aggregator:cache:v${CACHE_VERSION}`;
 
 /** Fetch the Results kicking off on `dates` (oldest first, contiguous, ending today). */
-export type FetchSpan = (dates: LocalDate[]) => Promise<Result[]>;
+export type FetchDates = (dates: LocalDate[]) => Promise<Result[]>;
 
 export interface PastDayCacheOptions {
   storage: Storage | undefined;
@@ -46,11 +47,11 @@ export function cacheValue(results: Result[]): string {
 
 /**
  * Results for `dates` (oldest first, ending today), from the cache where it
- * can, and from one `fetchSpan` call for the rest. Unordered.
+ * can, and from one `fetchDates` call for the rest. Unordered.
  */
 export async function loadWithPastDayCache(
   dates: LocalDate[],
-  fetchSpan: FetchSpan,
+  fetchDates: FetchDates,
   { storage, competitionId, timeZone, today }: PastDayCacheOptions,
 ): Promise<Result[]> {
   const yesterday = addDays(today, -1);
@@ -69,15 +70,15 @@ export async function loadWithPastDayCache(
     cached.push(...hit);
   }
 
-  const span = dates.slice(firstUncached);
-  if (span.length === 0) return cached;
+  const uncachedDates = dates.slice(firstUncached);
+  if (uncachedDates.length === 0) return cached;
 
-  const inSpan = new Set(span);
-  const fetched = (await fetchSpan(span)).filter((r) =>
-    inSpan.has(localDateOf(new Date(r.kickoff), timeZone)),
+  const requested = new Set(uncachedDates);
+  const fetched = (await fetchDates(uncachedDates)).filter((r) =>
+    requested.has(localDateOf(new Date(r.kickoff), timeZone)),
   );
 
-  for (const date of span.filter(cacheable)) {
+  for (const date of uncachedDates.filter(cacheable)) {
     const day = fetched.filter((r) => localDateOf(new Date(r.kickoff), timeZone) === date);
     write(storage, key(date), cacheValue(day));
   }

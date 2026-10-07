@@ -68,7 +68,8 @@ export function App({ deps, config = competitionConfig }: AppProps) {
                 key={competition.id}
                 competition={competition}
                 service={service}
-                deps={deps}
+                timeZone={deps.timeZone}
+                locale={deps.locale}
                 windowDays={windowDays}
                 refreshCount={refreshCount}
               />
@@ -84,13 +85,15 @@ export function App({ deps, config = competitionConfig }: AppProps) {
 function CompetitionResults({
   competition,
   service,
-  deps,
+  timeZone,
+  locale,
   windowDays,
   refreshCount,
 }: {
   competition: Competition;
   service: ResultsService;
-  deps: AppDeps;
+  timeZone: string;
+  locale: string | undefined;
   windowDays: WindowDays;
   refreshCount: number;
 }) {
@@ -132,7 +135,7 @@ function CompetitionResults({
       {outcome?.status === 'results' && (
         <ul className="results">
           {outcome.results.map((result) => (
-            <ResultRow key={result.id} result={result} timeZone={deps.timeZone} locale={deps.locale} />
+            <ResultRow key={result.id} result={result} timeZone={timeZone} locale={locale} />
           ))}
         </ul>
       )}

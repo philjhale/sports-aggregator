@@ -34,16 +34,15 @@ export interface SettingsStore {
 }
 
 /**
- * @param knownCompetitionIds When given, stored hidden ids not in this list
- *   (e.g. a Competition since removed from config) are dropped on load.
+ * @param knownCompetitionIds Stored hidden ids not in this list (e.g. a
+ *   Competition since removed from config) are dropped on load.
  */
 export function createSettingsStore(
   storage: Storage | undefined,
-  knownCompetitionIds?: readonly string[],
+  knownCompetitionIds: readonly string[],
 ): SettingsStore {
   function load(): Settings {
     const settings = readSettings(readJson(storage));
-    if (!knownCompetitionIds) return settings;
     return { ...settings, hidden: settings.hidden.filter((id) => knownCompetitionIds.includes(id)) };
   }
 
