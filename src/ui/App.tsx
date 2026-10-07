@@ -1,11 +1,12 @@
 import { useEffect, useId, useMemo, useState } from 'react';
 import { competitionConfig } from '../core/config';
 import { createResultsService } from '../core/resultsService';
+import { createSettingsStore } from '../core/settings';
 import type { CompetitionOutcome, ResultsService } from '../core/resultsService';
-import type { Competition, CompetitionConfig } from '../core/types';
-import { DEFAULT_WINDOW } from '../core/types';
+import type { Competition, CompetitionConfig, WindowDays } from '../core/types';
 import { Footer } from './Footer';
 import { ResultRow } from './ResultRow';
+import { WindowSelector } from './WindowSelector';
 
 /** Everything from the outside world the app needs. Injected so tests can fake it. */
 export interface AppDeps {
@@ -26,11 +27,15 @@ export interface AppProps {
 export function App({ deps, config = competitionConfig }: AppProps) {
   const service = useMemo(() => createResultsService(deps), [deps]);
   const sections = useMemo(() => service.layout(config), [service, config]);
+  const settings = useMemo(() => createSettingsStore(deps.storage), [deps.storage]);
+  const [windowDays, setWindowDays] = useState<WindowDays>(() => settings.load().window);
+  const changeWindow = (days: WindowDays) => setWindowDays(settings.update({ window: days }).window);
 
   return (
     <div className="app">
       <header>
         <h1>Sports Aggregator</h1>
+        <WindowSelector value={windowDays} onChange={changeWindow} />
       </header>
       <main>
         {sections.map(({ sport, competitions }) => (
@@ -41,6 +46,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
                 competition={competition}
                 service={service}
                 deps={deps}
+                windowDays={windowDays}
               />
             ))}
           </Section>
@@ -55,23 +61,25 @@ function CompetitionResults({
   competition,
   service,
   deps,
+  windowDays,
 }: {
   competition: Competition;
   service: ResultsService;
   deps: AppDeps;
+  windowDays: WindowDays;
 }) {
   const [outcome, setOutcome] = useState<CompetitionOutcome | undefined>();
 
   useEffect(() => {
     let current = true;
     setOutcome(undefined);
-    void service.loadCompetition(competition, DEFAULT_WINDOW).then((next) => {
+    void service.loadCompetition(competition, windowDays).then((next) => {
       if (current) setOutcome(next);
     });
     return () => {
       current = false;
     };
-  }, [service, competition]);
+  }, [service, competition, windowDays]);
 
   return (
     <Section title={competition.name} level={3}>
@@ -82,6 +90,11 @@ function CompetitionResults({
             <ResultRow key={result.id} result={result} timeZone={deps.timeZone} locale={deps.locale} />
           ))}
         </ul>
+      )}
+      {outcome?.status === 'empty' && (
+        <p className="empty">
+          {windowDays === 1 ? 'No results today' : `No results in the last ${windowDays} days`}
+        </p>
       )}
     </Section>
   );
