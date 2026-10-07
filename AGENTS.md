@@ -1,3 +1,7 @@
+# Workflow
+- Do new work in a new git worktree (not directly on main) — create a branch and git worktree add .claude/worktrees/<branch> -b <branch> before editing.
+- When a piece of work is finished, create a PR without asking.
+
 ## Agent skills
 
 ### Issue tracker
