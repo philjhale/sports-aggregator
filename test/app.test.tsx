@@ -1,6 +1,9 @@
 import { screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import nbaHeader from './fixtures/espn/nba-header.json';
+import { createFakeEspn, defaultHeaderFixtures } from './helpers/fakeEspn';
 import type { FakeEspn } from './helpers/fakeEspn';
+import { IN_PROGRESS, POSTPONED, SCHEDULED, withHeaderStatus } from './helpers/patchEspn';
 import { renderApp } from './helpers/renderApp';
 
 async function nbaResults() {
@@ -9,7 +12,8 @@ async function nbaResults() {
 }
 
 describe('NBA Results for the default Window', () => {
-  it('shows finished NBA Results under the Basketball Sport', async () => {
+  // Default Window: 5-7 Oct 2026 in Europe/London.
+  it('shows finished NBA Results under the Basketball Sport, newest first', async () => {
     renderApp();
 
     const basketball = screen.getByRole('region', { name: 'Basketball' });
@@ -18,15 +22,34 @@ describe('NBA Results for the default Window', () => {
     const rows = await nbaResults();
     expect(rows.map((r) => r.textContent)).toEqual([
       expect.stringContaining('Golden State Warriors'),
-      expect.stringContaining('Boston Celtics'),
+      expect.stringContaining('Oklahoma City Thunder'),
+      expect.stringContaining('Charlotte Hornets'),
+      expect.stringContaining('Atlanta Hawks'),
     ]);
   });
 
-  it('does not show scheduled, in-progress or postponed matches, or finished ones outside the Window', async () => {
+  it('does not show finished matches outside the Window', async () => {
     renderApp();
     await nbaResults();
 
-    for (const team of ['Brooklyn Nets', 'Dallas Mavericks', 'Utah Jazz', 'Miami Heat']) {
+    // Heat at Raptors, 3 Oct.
+    expect(screen.queryByText('Miami Heat')).not.toBeInTheDocument();
+  });
+
+  it('does not show scheduled, in-progress or postponed matches', async () => {
+    // A recording holds only matches that ESPN had already finished, so three
+    // of them are changed to the other statuses.
+    let nba = withHeaderStatus(nbaHeader, '401898389', POSTPONED);
+    nba = withHeaderStatus(nba, '401901820', IN_PROGRESS);
+    nba = withHeaderStatus(nba, '401898390', SCHEDULED);
+    const espn = createFakeEspn({
+      header: { ...defaultHeaderFixtures, 'basketball/nba': nba },
+    });
+    renderApp({ espn });
+
+    const rows = await nbaResults();
+    expect(rows.map((r) => r.textContent)).toEqual([expect.stringContaining('Atlanta Hawks')]);
+    for (const team of ['Oklahoma City Thunder', 'Charlotte Hornets', 'Golden State Warriors']) {
       expect(screen.queryByText(team)).not.toBeInTheDocument();
     }
   });
@@ -34,34 +57,36 @@ describe('NBA Results for the default Window', () => {
   it('shows both teams, both final scores, the local date and a Match Details link', async () => {
     renderApp();
 
-    const [lakersWarriors] = await nbaResults();
-    const row = within(lakersWarriors!);
+    const [warriorsLakers] = await nbaResults();
+    const row = within(warriorsLakers!);
     expect(row.getByText('Golden State Warriors')).toBeInTheDocument();
-    expect(row.getByText('118')).toBeInTheDocument();
+    expect(row.getByText('124')).toBeInTheDocument();
     expect(row.getByText('Los Angeles Lakers')).toBeInTheDocument();
-    expect(row.getByText('120')).toBeInTheDocument();
+    expect(row.getByText('98')).toBeInTheDocument();
     expect(row.getByText('Wed 7 Oct')).toBeInTheDocument();
 
     const link = row.getByRole('link', { name: 'Match Details' });
     expect(link).toHaveAttribute(
       'href',
-      'https://www.espn.com/nba/game/_/gameId/401800002/lakers-warriors',
+      'https://www.espn.com/nba/game/_/gameId/401898390/lakers-warriors',
     );
     expect(link).toHaveAttribute('target', '_blank');
     expect(link).toHaveAttribute('rel', 'noopener noreferrer');
   });
 
   it("shows a late-evening match on the viewer's local day", async () => {
-    // Knicks at Celtics tipped off at 2026-10-05T23:30Z.
+    // Grizzlies at Hawks tipped off at 2026-10-05T23:00Z.
     renderApp({ timeZone: 'Europe/London' });
     const london = await nbaResults();
-    expect(within(london[1]!).getByText('Tue 6 Oct')).toBeInTheDocument();
+    expect(within(london[3]!).getByText('Atlanta Hawks')).toBeInTheDocument();
+    expect(within(london[3]!).getByText('Tue 6 Oct')).toBeInTheDocument();
   });
 
   it('shows the same match a day earlier for a viewer in New York', async () => {
     renderApp({ timeZone: 'America/New_York' });
     const newYork = await nbaResults();
-    expect(within(newYork[1]!).getByText('Mon 5 Oct')).toBeInTheDocument();
+    expect(within(newYork[3]!).getByText('Atlanta Hawks')).toBeInTheDocument();
+    expect(within(newYork[3]!).getByText('Mon 5 Oct')).toBeInTheDocument();
   });
 
   it('shows a loading indicator until Results arrive', async () => {

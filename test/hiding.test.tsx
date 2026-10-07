@@ -48,7 +48,7 @@ describe('Hiding Competitions', () => {
     await user.click(panel.getByRole('checkbox', { name: 'NFL' }));
 
     const nfl = await screen.findByRole('region', { name: 'NFL' });
-    expect(await within(nfl).findByText('Green Bay Packers')).toBeInTheDocument();
+    expect(await within(nfl).findByText('New Orleans Saints')).toBeInTheDocument();
     expect(espn.headerRequests().slice(before).map((u) => u.searchParams.get('league'))).toEqual([
       'nfl',
     ]);

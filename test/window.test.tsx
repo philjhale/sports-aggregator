@@ -30,7 +30,7 @@ describe('Window selector', () => {
   it('refetches with the new range when the Window changes, and shows its Results', async () => {
     const { espn, user } = renderApp({ now: '2026-10-07T12:00:00Z', timeZone: 'Europe/London' });
     const nba = await screen.findByRole('region', { name: 'NBA' });
-    await within(nba).findByText('Boston Celtics');
+    await within(nba).findByText('Atlanta Hawks');
     expect(within(nba).queryByText('Miami Heat')).not.toBeInTheDocument();
 
     await user.click(screen.getByRole('radio', { name: '7 days' }));
@@ -44,7 +44,9 @@ describe('Window selector', () => {
 });
 
 describe('Window boundaries', () => {
-  // Knicks at Celtics tipped off at 2026-10-05T23:30Z: 6 Oct in London, 5 Oct in New York.
+  // Grizzlies at Hawks tipped off at 2026-10-05T23:00Z: 6 Oct in London, 5 Oct in New York.
+  // Nets at Hornets (10-06T23:00Z), Pelicans at Thunder (10-07T00:00Z) and
+  // Lakers at Warriors (10-07T02:00Z) are 7 Oct in London, 6 Oct in New York.
   const now = '2026-10-06T12:00:00Z';
 
   it("includes a late-evening match on the viewer's local today (London)", async () => {
@@ -52,20 +54,18 @@ describe('Window boundaries', () => {
     await user.click(screen.getByRole('radio', { name: '1 day' }));
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
-    // Lakers at Warriors (2026-10-06T23:00Z) is already 7 Oct in London.
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
     expect(within(nba).getAllByRole('listitem')).toHaveLength(1);
   });
 
-  it('leaves the same match out of a 1-day Window in New York, where it was yesterday', async () => {
+  it('leaves the Hawks match out of a 1-day Window in New York, where it was yesterday', async () => {
     const { user, espn } = renderApp({ now, timeZone: 'America/New_York' });
     await user.click(screen.getByRole('radio', { name: '1 day' }));
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    // Lakers at Warriors (2026-10-06T23:00Z) is 6 Oct in New York, so it stays.
     expect(await within(nba).findByText('Golden State Warriors')).toBeInTheDocument();
-    expect(within(nba).getAllByRole('listitem')).toHaveLength(1);
-    expect(within(nba).queryByText('Boston Celtics')).not.toBeInTheDocument();
+    expect(within(nba).getAllByRole('listitem')).toHaveLength(3);
+    expect(within(nba).queryByText('Atlanta Hawks')).not.toBeInTheDocument();
     const last = nbaHeaderRequests(espn).at(-1)!;
     expect(last.searchParams.get('dates')).toBe('20261006-20261006');
     expect(last.searchParams.get('tz')).toBe('America/New_York');
@@ -83,7 +83,7 @@ describe('Window boundaries', () => {
 
 describe('Competition with no Results in the Window', () => {
   it('says "No results in the last N days"', async () => {
-    // Nothing in the fixture finished between 10 and 12 Oct.
+    // Nothing in the recording finished between 10 and 12 Oct.
     renderApp({ now: '2026-10-12T12:00:00Z' });
 
     const nba = await screen.findByRole('region', { name: 'NBA' });
@@ -92,7 +92,7 @@ describe('Competition with no Results in the Window', () => {
   });
 
   it('says "No results today" for a 1-day Window', async () => {
-    // Nothing in the fixture finished on 8 Oct (London); 6-7 Oct did have Results.
+    // Nothing in the recording finished on 8 Oct (London); 7 Oct did have Results.
     const { user } = renderApp({ now: '2026-10-08T12:00:00Z' });
     const nba = await screen.findByRole('region', { name: 'NBA' });
     await within(nba).findByText('Golden State Warriors');
@@ -123,7 +123,7 @@ describe('Remembering the Window', () => {
 
     expect(screen.getByRole('radio', { name: '3 days' })).toBeChecked();
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
 
     await user.click(screen.getByRole('radio', { name: '7 days' }));
     expect(screen.getByRole('radio', { name: '7 days' })).toBeChecked();

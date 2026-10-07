@@ -3,36 +3,299 @@
     {
       "id": "600",
       "uid": "s:600",
+      "guid": "119cfa41-71d4-39bf-a790-6273a52b0259",
       "name": "Soccer",
       "slug": "soccer",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/combiner/i?img=/guid/119cfa41-71d4-39bf-a790-6273a52b0259/logos/default.png",
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ],
+          "width": 500,
+          "height": 500
+        },
+        {
+          "href": "https://a.espncdn.com/combiner/i?img=/guid/119cfa41-71d4-39bf-a790-6273a52b0259/logos/default-dark.png",
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ],
+          "width": 500,
+          "height": 500
+        }
+      ],
       "leagues": [
         {
           "id": "700",
           "uid": "s:600~l:700",
           "name": "English Premier League",
-          "abbreviation": "EPL",
-          "shortName": "EPL",
+          "abbreviation": "Premier League",
+          "shortName": "English Premier League",
           "slug": "eng.1",
+          "tag": "eng.1",
           "isTournament": false,
+          "smartdates": [
+            "2026-09-20T07:00Z",
+            "2026-10-10T07:00Z",
+            "2026-10-11T07:00Z"
+          ],
           "events": [
             {
-              "id": "740101",
-              "uid": "s:600~l:700~e:740101",
-              "date": "2026-10-03T14:00Z",
+              "id": "401879280",
+              "uid": "s:600~l:700~e:401879280~c:401879280",
+              "guid": "a170dcce-faf2-3fcd-a892-0ef605620e75",
+              "date": "2026-09-14T19:00:00Z",
               "timeValid": true,
+              "recent": false,
+              "name": "2026-27 English Premier League",
+              "shortName": "2026-27 English Premier League",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/match/_/gameId/401879280/newcastle-united-leeds-united",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "recap",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/report/_/gameId/401879280",
+                  "text": "Report"
+                },
+                {
+                  "rel": [
+                    "team-stats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/team-stats/_/gameId/401879280/league/eng.1",
+                  "text": "Team Stats"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": true,
+              "wallclockAvailable": true,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "401879280",
+              "location": "Elland Road",
               "season": 2026,
-              "seasonType": 1,
-              "name": "Brighton & Hove Albion at Arsenal",
-              "shortName": "BHA @ ARS",
+              "seasonStartDate": "2026-06-01T04:00:00Z",
+              "seasonEndDate": "2027-06-01T03:59:00Z",
+              "seasonType": "1",
+              "playoff": false,
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "1",
+                "name": "2026-27 English Premier League",
+                "abbreviation": "2026-27 English Premier League",
+                "shortName": "2026-27 English Premier League"
+              },
+              "altGameNote": "English Premier League",
+              "link": "https://www.espn.com/soccer/match/_/gameId/401879280/newcastle-united-leeds-united",
               "status": "post",
               "summary": "FT",
               "period": 2,
-              "clock": "90'+4'",
-              "link": "https://www.espn.com/soccer/match/_/gameId/740101/brighton-hove-albion-arsenal",
+              "clock": "90'+5'",
+              "addedClock": 300,
+              "broadcasts": [
+                {
+                  "typeId": 1,
+                  "priority": 1,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 519,
+                  "broadcastId": 519,
+                  "name": "USA Network",
+                  "shortName": "USA Net",
+                  "callLetters": "USA Net",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                }
+              ],
+              "broadcast": "USA Net",
+              "odds": {
+                "details": "LEE +135",
+                "overUnder": 2.5,
+                "spread": -0.5,
+                "overOdds": -140,
+                "underOdds": 115,
+                "provider": {
+                  "id": "100",
+                  "name": "DraftKings",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": 135
+                },
+                "away": {
+                  "moneyLine": 205
+                },
+                "draw": {
+                  "moneyLine": 245
+                },
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "underdog": true,
+                  "moneyLine": 205,
+                  "spreadOdds": -170,
+                  "team": {
+                    "id": "361",
+                    "abbreviation": "NEW",
+                    "displayName": "Newcastle United",
+                    "name": "Newcastle"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "underdog": false,
+                  "moneyLine": 135,
+                  "spreadOdds": 120,
+                  "team": {
+                    "id": "357",
+                    "abbreviation": "LEE",
+                    "displayName": "Leeds United",
+                    "name": "Leeds"
+                  }
+                },
+                "drawOdds": {
+                  "moneyLine": 245
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34598645",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Spread",
+                  "shortDisplayName": "Spread",
+                  "home": {
+                    "open": {
+                      "line": "-0.5",
+                      "odds": "+130"
+                    },
+                    "close": {
+                      "line": "-0.5",
+                      "odds": "+120"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "line": "+0.5",
+                      "odds": "-200"
+                    },
+                    "close": {
+                      "line": "+0.5",
+                      "odds": "-170"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "open": {
+                      "odds": "+145"
+                    },
+                    "close": {
+                      "odds": "+135"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "odds": "+165"
+                    },
+                    "close": {
+                      "odds": "+205"
+                    }
+                  },
+                  "draw": {
+                    "open": {
+                      "odds": "+250"
+                    },
+                    "close": {
+                      "odds": "+245"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "open": {
+                      "line": "o2.5",
+                      "odds": "-145"
+                    },
+                    "close": {
+                      "line": "o2.5",
+                      "odds": "-140"
+                    }
+                  },
+                  "under": {
+                    "open": {
+                      "line": "u2.5",
+                      "odds": "+110"
+                    },
+                    "close": {
+                      "line": "u2.5",
+                      "odds": "+115"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "Game Odds"
+                }
+              },
               "fullStatus": {
-                "clock": 0,
-                "displayClock": "90'+4'",
+                "clock": 5400,
+                "addedClock": 300,
+                "displayClock": "90'+5'",
                 "period": 2,
+                "displayPeriod": "2nd",
                 "type": {
                   "id": "28",
                   "name": "STATUS_FULL_TIME",
@@ -41,278 +304,4041 @@
                   "description": "Full Time",
                   "detail": "FT",
                   "shortDetail": "FT"
-                }
-              },
-              "competitors": [
-                {
-                  "id": "359",
-                  "uid": "s:600~l:700~t:359",
-                  "type": "team",
-                  "order": 0,
-                  "homeAway": "home",
-                  "winner": true,
-                  "displayName": "Arsenal",
-                  "name": "Arsenal",
-                  "abbreviation": "ARS",
-                  "location": "Arsenal",
-                  "shortDisplayName": "Arsenal",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/359.png",
-                  "score": "2"
-                },
-                {
-                  "id": "331",
-                  "uid": "s:600~l:700~t:331",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "winner": false,
-                  "displayName": "Brighton & Hove Albion",
-                  "name": "Brighton",
-                  "abbreviation": "BHA",
-                  "location": "Brighton & Hove Albion",
-                  "shortDisplayName": "Brighton",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
-                  "score": "0"
-                }
-              ]
-            },
-            {
-              "id": "740102",
-              "uid": "s:600~l:700~e:740102",
-              "date": "2026-10-05T19:00Z",
-              "timeValid": true,
-              "season": 2026,
-              "seasonType": 1,
-              "name": "Liverpool at Everton",
-              "shortName": "LIV @ EVE",
-              "status": "post",
-              "summary": "FT",
-              "period": 2,
-              "clock": "90'+4'",
-              "link": "https://www.espn.com/soccer/match/_/gameId/740102/liverpool-everton",
-              "fullStatus": {
-                "clock": 0,
-                "displayClock": "90'+4'",
-                "period": 2,
-                "type": {
-                  "id": "28",
-                  "name": "STATUS_FULL_TIME",
-                  "state": "post",
-                  "completed": true,
-                  "description": "Full Time",
-                  "detail": "FT",
-                  "shortDetail": "FT"
-                }
-              },
-              "competitors": [
-                {
-                  "id": "368",
-                  "uid": "s:600~l:700~t:368",
-                  "type": "team",
-                  "order": 0,
-                  "homeAway": "home",
-                  "winner": false,
-                  "displayName": "Everton",
-                  "name": "Everton",
-                  "abbreviation": "EVE",
-                  "location": "Everton",
-                  "shortDisplayName": "Everton",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/368.png",
-                  "score": "1"
-                },
-                {
-                  "id": "364",
-                  "uid": "s:600~l:700~t:364",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "winner": false,
-                  "displayName": "Liverpool",
-                  "name": "Liverpool",
-                  "abbreviation": "LIV",
-                  "location": "Liverpool",
-                  "shortDisplayName": "Liverpool",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
-                  "score": "1"
-                }
-              ]
-            },
-            {
-              "id": "740103",
-              "uid": "s:600~l:700~e:740103",
-              "date": "2026-10-06T19:00Z",
-              "timeValid": true,
-              "season": 2026,
-              "seasonType": 1,
-              "name": "Fulham at Manchester City",
-              "shortName": "FUL @ MNC",
-              "status": "post",
-              "summary": "FT",
-              "period": 2,
-              "clock": "90'+4'",
-              "link": "https://www.espn.com/soccer/match/_/gameId/740103/fulham-manchester-city",
-              "fullStatus": {
-                "clock": 0,
-                "displayClock": "90'+4'",
-                "period": 2,
-                "type": {
-                  "id": "28",
-                  "name": "STATUS_FULL_TIME",
-                  "state": "post",
-                  "completed": true,
-                  "description": "Full Time",
-                  "detail": "FT",
-                  "shortDetail": "FT"
-                }
-              },
-              "competitors": [
-                {
-                  "id": "382",
-                  "uid": "s:600~l:700~t:382",
-                  "type": "team",
-                  "order": 0,
-                  "homeAway": "home",
-                  "winner": true,
-                  "displayName": "Manchester City",
-                  "name": "Man City",
-                  "abbreviation": "MNC",
-                  "location": "Manchester City",
-                  "shortDisplayName": "Man City",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
-                  "score": "3"
-                },
-                {
-                  "id": "370",
-                  "uid": "s:600~l:700~t:370",
-                  "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "winner": false,
-                  "displayName": "Fulham",
-                  "name": "Fulham",
-                  "abbreviation": "FUL",
-                  "location": "Fulham",
-                  "shortDisplayName": "Fulham",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
-                  "score": "1"
-                }
-              ]
-            },
-            {
-              "id": "740104",
-              "uid": "s:600~l:700~e:740104",
-              "date": "2026-10-06T19:45Z",
-              "timeValid": true,
-              "season": 2026,
-              "seasonType": 1,
-              "name": "Aston Villa at Newcastle United",
-              "shortName": "AVL @ NEW",
-              "status": "post",
-              "summary": "Postponed",
-              "period": 0,
-              "clock": "",
-              "link": "https://www.espn.com/soccer/match/_/gameId/740104/aston-villa-newcastle-united",
-              "fullStatus": {
-                "clock": 0,
-                "displayClock": "0.0",
-                "period": 0,
-                "type": {
-                  "id": "6",
-                  "name": "STATUS_POSTPONED",
-                  "state": "post",
-                  "completed": false,
-                  "description": "Postponed",
-                  "detail": "Postponed",
-                  "shortDetail": "Postponed"
                 }
               },
               "competitors": [
                 {
                   "id": "361",
-                  "uid": "s:600~l:700~t:361",
+                  "guid": "ec6b4352-98d3-424d-6214-778d79b47a01",
+                  "uid": "s:600~t:361",
                   "type": "team",
-                  "order": 0,
-                  "homeAway": "home",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "WLWDW",
                   "displayName": "Newcastle United",
                   "name": "Newcastle",
                   "abbreviation": "NEW",
                   "location": "Newcastle United",
-                  "shortDisplayName": "Newcastle",
+                  "color": "000000",
+                  "alternateColor": "0B1B3D",
+                  "score": "1",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "third",
+                    "color": "d0b2d3",
+                    "alternateColor": "000000"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/361/newcastle-united",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/361/newcastle-united",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:361&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/361/newcastle-united",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:361&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/361/newcastle-united",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:361&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:361&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/361/newcastle-united",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:361&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "1-2-1, 5 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 3
+                    },
+                    "pointsAgainst": {
+                      "value": 8
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 1
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 1
+                    },
+                    "points": {
+                      "value": 5
+                    },
+                    "homeWins": {
+                      "value": 0
+                    },
+                    "pointDifferential": {
+                      "value": -1
+                    },
+                    "homePointsAgainst": {
+                      "value": 4
+                    },
+                    "gamesPlayed": {
+                      "value": 4
+                    },
+                    "ties": {
+                      "value": 2
+                    },
+                    "awayLosses": {
+                      "value": 1
+                    },
+                    "rank": {
+                      "value": 12
+                    },
+                    "homePointsFor": {
+                      "value": 4
+                    },
+                    "awayTies": {
+                      "value": 0
+                    },
+                    "wins": {
+                      "value": 1
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 2
+                    },
+                    "pointsFor": {
+                      "value": 7
+                    },
+                    "homeLosses": {
+                      "value": 0
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 4
+                    }
+                  },
                   "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/361.png",
-                  "score": "0"
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/361.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "4 GA, 3 SV",
+                      "athlete": {
+                        "id": "319267",
+                        "displayName": "Lukás Hornícek",
+                        "shortName": "L. Hornícek",
+                        "fullName": "Lukás Hornícek",
+                        "lastName": "Hornícek",
+                        "jersey": "21",
+                        "team": {
+                          "id": "361"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "id": "362",
-                  "uid": "s:600~l:700~t:362",
+                  "id": "357",
+                  "guid": "231a0077-e0f5-f148-974b-82b9ec5f304e",
+                  "uid": "s:600~t:357",
                   "type": "team",
-                  "order": 1,
-                  "homeAway": "away",
-                  "displayName": "Aston Villa",
-                  "name": "Aston Villa",
-                  "abbreviation": "AVL",
-                  "location": "Aston Villa",
-                  "shortDisplayName": "Aston Villa",
-                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
-                  "score": "0"
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "form": "DWLDD",
+                  "displayName": "Leeds United",
+                  "name": "Leeds",
+                  "abbreviation": "LEE",
+                  "location": "Leeds United",
+                  "color": "ffffff",
+                  "alternateColor": "FFCD00",
+                  "score": "4",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "f8f8ff",
+                    "alternateColor": "133699"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/357/leeds-united",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/357/leeds-united",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:357&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/357/leeds-united",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:357&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/357/leeds-united",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:357&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:357&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/357/leeds-united",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:357&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "2-2-0, 8 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 2
+                    },
+                    "pointsAgainst": {
+                      "value": 3
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 1
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 0
+                    },
+                    "points": {
+                      "value": 8
+                    },
+                    "homeWins": {
+                      "value": 1
+                    },
+                    "pointDifferential": {
+                      "value": 4
+                    },
+                    "homePointsAgainst": {
+                      "value": 2
+                    },
+                    "gamesPlayed": {
+                      "value": 4
+                    },
+                    "ties": {
+                      "value": 2
+                    },
+                    "awayLosses": {
+                      "value": 0
+                    },
+                    "rank": {
+                      "value": 3
+                    },
+                    "homePointsFor": {
+                      "value": 5
+                    },
+                    "awayTies": {
+                      "value": 1
+                    },
+                    "wins": {
+                      "value": 2
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 1
+                    },
+                    "pointsFor": {
+                      "value": 7
+                    },
+                    "homeLosses": {
+                      "value": 0
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 1
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/357.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/357.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "1 GA, 4 SV",
+                      "athlete": {
+                        "id": "307118",
+                        "displayName": "James Trafford",
+                        "shortName": "J. Trafford",
+                        "fullName": "James Trafford",
+                        "lastName": "Trafford",
+                        "jersey": "1",
+                        "team": {
+                          "id": "357"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "pccEventId": "401879280",
+              "onDisneyNetwork": false,
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=soccer&leagueAbbrev=eng.1&gameId=401879280",
+                  "text": "Summary",
+                  "shortText": "Summary"
                 }
               ]
             },
             {
-              "id": "740105",
-              "uid": "s:600~l:700~e:740105",
-              "date": "2026-10-07T19:00Z",
+              "id": "401879275",
+              "uid": "s:600~l:700~e:401879275~c:401879275",
+              "guid": "46f533c2-1552-3b8e-a249-08acbcffc650",
+              "date": "2026-09-18T19:00:00Z",
               "timeValid": true,
+              "recent": false,
+              "name": "2026-27 English Premier League",
+              "shortName": "2026-27 English Premier League",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/match/_/gameId/401879275/chelsea-brentford",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "recap",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/report/_/gameId/401879275",
+                  "text": "Report"
+                },
+                {
+                  "rel": [
+                    "team-stats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/team-stats/_/gameId/401879275/league/eng.1",
+                  "text": "Team Stats"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": true,
+              "wallclockAvailable": true,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "401879275",
+              "location": "Gtech Community Stadium",
               "season": 2026,
-              "seasonType": 1,
-              "name": "Tottenham Hotspur at Chelsea",
-              "shortName": "TOT @ CHE",
-              "status": "pre",
-              "summary": "10/7 - 3:00 PM EDT",
-              "period": 0,
-              "clock": "",
-              "link": "https://www.espn.com/soccer/match/_/gameId/740105/tottenham-hotspur-chelsea",
+              "seasonStartDate": "2026-06-01T04:00:00Z",
+              "seasonEndDate": "2027-06-01T03:59:00Z",
+              "seasonType": "1",
+              "playoff": false,
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "1",
+                "name": "2026-27 English Premier League",
+                "abbreviation": "2026-27 English Premier League",
+                "shortName": "2026-27 English Premier League"
+              },
+              "altGameNote": "English Premier League",
+              "link": "https://www.espn.com/soccer/match/_/gameId/401879275/chelsea-brentford",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+6'",
+              "addedClock": 360,
+              "broadcasts": [
+                {
+                  "typeId": 1,
+                  "priority": 1,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 519,
+                  "broadcastId": 519,
+                  "name": "USA Network",
+                  "shortName": "USA Net",
+                  "callLetters": "USA Net",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                }
+              ],
+              "broadcast": "USA Net",
+              "odds": {
+                "details": "BRE +155",
+                "overUnder": 3.5,
+                "spread": -0.5,
+                "overOdds": 130,
+                "underOdds": -160,
+                "provider": {
+                  "id": "100",
+                  "name": "DraftKings",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": 155
+                },
+                "away": {
+                  "moneyLine": 160
+                },
+                "draw": {
+                  "moneyLine": 265
+                },
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": true,
+                  "underdog": true,
+                  "moneyLine": 160,
+                  "spreadOdds": -195,
+                  "team": {
+                    "id": "363",
+                    "abbreviation": "CHE",
+                    "displayName": "Chelsea",
+                    "name": "Chelsea"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": false,
+                  "underdog": false,
+                  "moneyLine": 155,
+                  "spreadOdds": 140,
+                  "team": {
+                    "id": "337",
+                    "abbreviation": "BRE",
+                    "displayName": "Brentford",
+                    "name": "Brentford"
+                  }
+                },
+                "drawOdds": {
+                  "moneyLine": 265
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34633049",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Spread",
+                  "shortDisplayName": "Spread",
+                  "home": {
+                    "open": {
+                      "line": "+0.5",
+                      "odds": "-195"
+                    },
+                    "close": {
+                      "line": "-0.5",
+                      "odds": "+140"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "line": "-0.5",
+                      "odds": "+125"
+                    },
+                    "close": {
+                      "line": "+0.5",
+                      "odds": "-195"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "open": {
+                      "odds": "+170"
+                    },
+                    "close": {
+                      "odds": "+155"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "odds": "+135"
+                    },
+                    "close": {
+                      "odds": "+160"
+                    }
+                  },
+                  "draw": {
+                    "open": {
+                      "odds": "+260"
+                    },
+                    "close": {
+                      "odds": "+265"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "open": {
+                      "line": "o2.5",
+                      "odds": "-175"
+                    },
+                    "close": {
+                      "line": "o3.5",
+                      "odds": "+130"
+                    }
+                  },
+                  "under": {
+                    "open": {
+                      "line": "u2.5",
+                      "odds": "+125"
+                    },
+                    "close": {
+                      "line": "u3.5",
+                      "odds": "-160"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "Game Odds"
+                }
+              },
               "fullStatus": {
-                "clock": 0,
-                "displayClock": "0.0",
-                "period": 0,
+                "clock": 5400,
+                "addedClock": 360,
+                "displayClock": "90'+6'",
+                "period": 2,
+                "displayPeriod": "2nd",
                 "type": {
-                  "id": "1",
-                  "name": "STATUS_SCHEDULED",
-                  "state": "pre",
-                  "completed": false,
-                  "description": "Scheduled",
-                  "detail": "Wed, October 7th at 3:00 PM EDT",
-                  "shortDetail": "10/7 - 3:00 PM EDT"
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
                 }
               },
               "competitors": [
                 {
                   "id": "363",
-                  "uid": "s:600~l:700~t:363",
+                  "guid": "c43a00b9-2826-72b3-77a0-62730abc936e",
+                  "uid": "s:600~t:363",
                   "type": "team",
-                  "order": 0,
-                  "homeAway": "home",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "LDWLW",
                   "displayName": "Chelsea",
                   "name": "Chelsea",
                   "abbreviation": "CHE",
                   "location": "Chelsea",
-                  "shortDisplayName": "Chelsea",
+                  "color": "144992",
+                  "alternateColor": "FFFFFF",
+                  "score": "0",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "away",
+                    "color": "000000",
+                    "alternateColor": "dec13c"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/363/chelsea",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/363/chelsea",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:363&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/363/chelsea",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:363&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/363/chelsea",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:363&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:363&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/363/chelsea",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:363&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "2-1-2, 7 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 4
+                    },
+                    "pointsAgainst": {
+                      "value": 12
+                    },
+                    "awayGamesPlayed": {
+                      "value": 3
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 1
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 2
+                    },
+                    "points": {
+                      "value": 7
+                    },
+                    "homeWins": {
+                      "value": 1
+                    },
+                    "pointDifferential": {
+                      "value": -2
+                    },
+                    "homePointsAgainst": {
+                      "value": 5
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 1
+                    },
+                    "awayLosses": {
+                      "value": 2
+                    },
+                    "rank": {
+                      "value": 9
+                    },
+                    "homePointsFor": {
+                      "value": 6
+                    },
+                    "awayTies": {
+                      "value": 0
+                    },
+                    "wins": {
+                      "value": 2
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 1
+                    },
+                    "pointsFor": {
+                      "value": 10
+                    },
+                    "homeLosses": {
+                      "value": 0
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 7
+                    }
+                  },
                   "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
-                  "score": ""
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/363.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "3 GA, 3 SV",
+                      "athlete": {
+                        "id": "158626",
+                        "displayName": "Emiliano Martínez",
+                        "shortName": "E. Martínez",
+                        "fullName": "Emiliano Martínez",
+                        "lastName": "Martínez",
+                        "jersey": "1",
+                        "team": {
+                          "id": "363"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "id": "367",
-                  "uid": "s:600~l:700~t:367",
+                  "id": "337",
+                  "guid": "0446e7fd-7655-f17a-d282-8c401b808d1f",
+                  "uid": "s:600~t:337",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "form": "WWDDD",
+                  "displayName": "Brentford",
+                  "name": "Brentford",
+                  "abbreviation": "BRE",
+                  "location": "Brentford",
+                  "color": "f42727",
+                  "alternateColor": "0f1c3f",
+                  "score": "3",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "fa003a",
+                    "alternateColor": "ffffff"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/337/brentford",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/337/brentford",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:337&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/337/brentford",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:337&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/337/brentford",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:337&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:337&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/337/brentford",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:337&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "2-3-0, 9 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 3
+                    },
+                    "pointsAgainst": {
+                      "value": 4
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 0
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 0
+                    },
+                    "points": {
+                      "value": 9
+                    },
+                    "homeWins": {
+                      "value": 2
+                    },
+                    "pointDifferential": {
+                      "value": 6
+                    },
+                    "homePointsAgainst": {
+                      "value": 1
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 3
+                    },
+                    "awayLosses": {
+                      "value": 0
+                    },
+                    "rank": {
+                      "value": 4
+                    },
+                    "homePointsFor": {
+                      "value": 7
+                    },
+                    "awayTies": {
+                      "value": 2
+                    },
+                    "wins": {
+                      "value": 2
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 1
+                    },
+                    "pointsFor": {
+                      "value": 10
+                    },
+                    "homeLosses": {
+                      "value": 0
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 3
+                    },
+                    "awayPointsAgainst": {
+                      "value": 3
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/337.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/337.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "0 GA, 2 SV",
+                      "athlete": {
+                        "id": "275599",
+                        "displayName": "Caoimhín Kelleher",
+                        "shortName": "C. Kelleher",
+                        "fullName": "Caoimhín Kelleher",
+                        "lastName": "Kelleher",
+                        "jersey": "1",
+                        "team": {
+                          "id": "337"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "pccEventId": "401879275",
+              "onDisneyNetwork": false,
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=soccer&leagueAbbrev=eng.1&gameId=401879275",
+                  "text": "Summary",
+                  "shortText": "Summary"
+                }
+              ]
+            },
+            {
+              "id": "401879269",
+              "uid": "s:600~l:700~e:401879269~c:401879269",
+              "guid": "c4fad673-100b-38ee-ae46-b2a46bbf7adf",
+              "date": "2026-09-19T11:30:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "2026-27 English Premier League",
+              "shortName": "2026-27 English Premier League",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/match/_/gameId/401879269/aston-villa-tottenham-hotspur",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "recap",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/report/_/gameId/401879269",
+                  "text": "Report"
+                },
+                {
+                  "rel": [
+                    "team-stats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/team-stats/_/gameId/401879269/league/eng.1",
+                  "text": "Team Stats"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": true,
+              "wallclockAvailable": true,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "401879269",
+              "location": "Tottenham Hotspur Stadium",
+              "season": 2026,
+              "seasonStartDate": "2026-06-01T04:00:00Z",
+              "seasonEndDate": "2027-06-01T03:59:00Z",
+              "seasonType": "1",
+              "playoff": false,
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "1",
+                "name": "2026-27 English Premier League",
+                "abbreviation": "2026-27 English Premier League",
+                "shortName": "2026-27 English Premier League"
+              },
+              "altGameNote": "English Premier League",
+              "link": "https://www.espn.com/soccer/match/_/gameId/401879269/aston-villa-tottenham-hotspur",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+9'",
+              "addedClock": 540,
+              "broadcasts": [
+                {
+                  "typeId": 1,
+                  "priority": 1,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 519,
+                  "broadcastId": 519,
+                  "name": "USA Network",
+                  "shortName": "USA Net",
+                  "callLetters": "USA Net",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                },
+                {
+                  "typeId": 4,
+                  "priority": 2,
+                  "type": "STREAMING",
+                  "isNational": true,
+                  "broadcasterId": 797,
+                  "broadcastId": 797,
+                  "name": "Universo",
+                  "shortName": "Universo",
+                  "callLetters": "Universo",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                }
+              ],
+              "broadcast": "USA Net/Universo",
+              "odds": {
+                "details": "TOT -115",
+                "overUnder": 2.5,
+                "spread": -0.5,
+                "overOdds": -160,
+                "underOdds": 130,
+                "provider": {
+                  "id": "100",
+                  "name": "DraftKings",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": -115
+                },
+                "away": {
+                  "moneyLine": 295
+                },
+                "draw": {
+                  "moneyLine": 280
+                },
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "underdog": true,
+                  "moneyLine": 295,
+                  "spreadOdds": -115,
+                  "team": {
+                    "id": "362",
+                    "abbreviation": "AVL",
+                    "displayName": "Aston Villa",
+                    "name": "Aston Villa"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "underdog": false,
+                  "moneyLine": -115,
+                  "spreadOdds": -120,
+                  "team": {
+                    "id": "367",
+                    "abbreviation": "TOT",
+                    "displayName": "Tottenham Hotspur",
+                    "name": "Spurs"
+                  }
+                },
+                "drawOdds": {
+                  "moneyLine": 280
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34633058",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Spread",
+                  "shortDisplayName": "Spread",
+                  "home": {
+                    "open": {
+                      "line": "-0.5",
+                      "odds": "-115"
+                    },
+                    "close": {
+                      "line": "-0.5",
+                      "odds": "-120"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "line": "+0.5",
+                      "odds": "-135"
+                    },
+                    "close": {
+                      "line": "+0.5",
+                      "odds": "-115"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "open": {
+                      "odds": "-105"
+                    },
+                    "close": {
+                      "odds": "-115"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "odds": "+255"
+                    },
+                    "close": {
+                      "odds": "+295"
+                    }
+                  },
+                  "draw": {
+                    "open": {
+                      "odds": "+260"
+                    },
+                    "close": {
+                      "odds": "+280"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "open": {
+                      "line": "o2.5",
+                      "odds": "-140"
+                    },
+                    "close": {
+                      "line": "o2.5",
+                      "odds": "-160"
+                    }
+                  },
+                  "under": {
+                    "open": {
+                      "line": "u2.5",
+                      "odds": "+105"
+                    },
+                    "close": {
+                      "line": "u2.5",
+                      "odds": "+130"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "Game Odds"
+                }
+              },
+              "fullStatus": {
+                "clock": 5400,
+                "addedClock": 540,
+                "displayClock": "90'+9'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "362",
+                  "guid": "610557ff-e870-ea0e-a3b2-8244df325d22",
+                  "uid": "s:600~t:362",
                   "type": "team",
                   "order": 1,
                   "homeAway": "away",
+                  "winner": true,
+                  "form": "WWLWD",
+                  "displayName": "Aston Villa",
+                  "name": "Aston Villa",
+                  "abbreviation": "AVL",
+                  "location": "Aston Villa",
+                  "color": "660e36",
+                  "alternateColor": "000000",
+                  "score": "3",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "8b1d39",
+                    "alternateColor": "bbd9ef"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/362/aston-villa",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/362/aston-villa",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:362&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/362/aston-villa",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:362&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/362/aston-villa",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:362&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:362&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/362/aston-villa",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:362&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "1-1-3, 4 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 3
+                    },
+                    "pointsAgainst": {
+                      "value": 9
+                    },
+                    "awayGamesPlayed": {
+                      "value": 3
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 1
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 3
+                    },
+                    "points": {
+                      "value": 4
+                    },
+                    "homeWins": {
+                      "value": 0
+                    },
+                    "pointDifferential": {
+                      "value": -5
+                    },
+                    "homePointsAgainst": {
+                      "value": 3
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 1
+                    },
+                    "awayLosses": {
+                      "value": 1
+                    },
+                    "rank": {
+                      "value": 16
+                    },
+                    "homePointsFor": {
+                      "value": 1
+                    },
+                    "awayTies": {
+                      "value": 1
+                    },
+                    "wins": {
+                      "value": 1
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 4
+                    },
+                    "homeLosses": {
+                      "value": 2
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 6
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/362.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "2 GA, 5 SV",
+                      "athlete": {
+                        "id": "265958",
+                        "displayName": "Zion Suzuki",
+                        "shortName": "Z. Suzuki",
+                        "fullName": "Zion Suzuki",
+                        "lastName": "Suzuki",
+                        "jersey": "1",
+                        "team": {
+                          "id": "362"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "367",
+                  "guid": "f987a4b2-f3f9-e7f6-eb7d-eda43893be5a",
+                  "uid": "s:600~t:367",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "form": "LLDDL",
                   "displayName": "Tottenham Hotspur",
                   "name": "Spurs",
                   "abbreviation": "TOT",
                   "location": "Tottenham Hotspur",
-                  "shortDisplayName": "Spurs",
+                  "color": "ffffff",
+                  "alternateColor": "0B1426",
+                  "score": "2",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "ffffff",
+                    "alternateColor": "212f54"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/367/tottenham-hotspur",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/367/tottenham-hotspur",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:367&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/367/tottenham-hotspur",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:367&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/367/tottenham-hotspur",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:367&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:367&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/367/tottenham-hotspur",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:367&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "0-2-3, 2 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 0
+                    },
+                    "pointsAgainst": {
+                      "value": 8
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 0
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 3
+                    },
+                    "points": {
+                      "value": 2
+                    },
+                    "homeWins": {
+                      "value": 0
+                    },
+                    "pointDifferential": {
+                      "value": -6
+                    },
+                    "homePointsAgainst": {
+                      "value": 5
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 2
+                    },
+                    "awayLosses": {
+                      "value": 1
+                    },
+                    "rank": {
+                      "value": 20
+                    },
+                    "homePointsFor": {
+                      "value": 2
+                    },
+                    "awayTies": {
+                      "value": 1
+                    },
+                    "wins": {
+                      "value": 0
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 1
+                    },
+                    "pointsFor": {
+                      "value": 2
+                    },
+                    "homeLosses": {
+                      "value": 2
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 3
+                    },
+                    "awayPointsAgainst": {
+                      "value": 3
+                    }
+                  },
                   "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/367.png",
-                  "score": ""
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/367.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "3 GA, 3 SV",
+                      "athlete": {
+                        "id": "324393",
+                        "displayName": "Antonín Kinsky",
+                        "shortName": "A. Kinsky",
+                        "fullName": "Antonín Kinsky",
+                        "lastName": "Kinsky",
+                        "jersey": "31",
+                        "team": {
+                          "id": "367"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "pccEventId": "401879269",
+              "onDisneyNetwork": false,
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=soccer&leagueAbbrev=eng.1&gameId=401879269",
+                  "text": "Summary",
+                  "shortText": "Summary"
+                }
+              ]
+            },
+            {
+              "id": "401879272",
+              "uid": "s:600~l:700~e:401879272~c:401879272",
+              "guid": "bb3aa57e-7d4f-36c2-a693-e2af498e752e",
+              "date": "2026-09-20T13:00:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "2026-27 English Premier League",
+              "shortName": "2026-27 English Premier League",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/match/_/gameId/401879272/sunderland-manchester-city",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "recap",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/report/_/gameId/401879272",
+                  "text": "Report"
+                },
+                {
+                  "rel": [
+                    "team-stats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/team-stats/_/gameId/401879272/league/eng.1",
+                  "text": "Team Stats"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": true,
+              "wallclockAvailable": true,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "401879272",
+              "location": "Etihad Stadium",
+              "season": 2026,
+              "seasonStartDate": "2026-06-01T04:00:00Z",
+              "seasonEndDate": "2027-06-01T03:59:00Z",
+              "seasonType": "1",
+              "playoff": false,
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "1",
+                "name": "2026-27 English Premier League",
+                "abbreviation": "2026-27 English Premier League",
+                "shortName": "2026-27 English Premier League"
+              },
+              "altGameNote": "English Premier League",
+              "link": "https://www.espn.com/soccer/match/_/gameId/401879272/sunderland-manchester-city",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+5'",
+              "addedClock": 300,
+              "broadcasts": [
+                {
+                  "typeId": 4,
+                  "priority": 1,
+                  "type": "STREAMING",
+                  "isNational": true,
+                  "broadcasterId": 789,
+                  "broadcastId": 789,
+                  "name": "Peacock",
+                  "shortName": "Peacock",
+                  "callLetters": "Peacock",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                }
+              ],
+              "broadcast": "Peacock",
+              "odds": {
+                "details": "MNC -280",
+                "overUnder": 2.5,
+                "spread": -1.5,
+                "overOdds": -160,
+                "underOdds": 130,
+                "provider": {
+                  "id": "100",
+                  "name": "DraftKings",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": -280
+                },
+                "away": {
+                  "moneyLine": 750
+                },
+                "draw": {
+                  "moneyLine": 425
+                },
+                "awayTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "underdog": true,
+                  "moneyLine": 750,
+                  "spreadOdds": -135,
+                  "team": {
+                    "id": "366",
+                    "abbreviation": "SUN",
+                    "displayName": "Sunderland",
+                    "name": "Sunderland"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "underdog": false,
+                  "moneyLine": -280,
+                  "spreadOdds": -105,
+                  "team": {
+                    "id": "382",
+                    "abbreviation": "MNC",
+                    "displayName": "Manchester City",
+                    "name": "Man City"
+                  }
+                },
+                "drawOdds": {
+                  "moneyLine": 425
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34633050",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Spread",
+                  "shortDisplayName": "Spread",
+                  "home": {
+                    "open": {
+                      "line": "-1.5",
+                      "odds": "-140"
+                    },
+                    "close": {
+                      "line": "-1.5",
+                      "odds": "-105"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "line": "+1.5",
+                      "odds": "-110"
+                    },
+                    "close": {
+                      "line": "+1.5",
+                      "odds": "-135"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "open": {
+                      "odds": "-390"
+                    },
+                    "close": {
+                      "odds": "-280"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "odds": "+850"
+                    },
+                    "close": {
+                      "odds": "+750"
+                    }
+                  },
+                  "draw": {
+                    "open": {
+                      "odds": "+500"
+                    },
+                    "close": {
+                      "odds": "+425"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "open": {
+                      "line": "o2.5",
+                      "odds": "-190"
+                    },
+                    "close": {
+                      "line": "o2.5",
+                      "odds": "-160"
+                    }
+                  },
+                  "under": {
+                    "open": {
+                      "line": "u2.5",
+                      "odds": "+135"
+                    },
+                    "close": {
+                      "line": "u2.5",
+                      "odds": "+130"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "Game Odds"
+                }
+              },
+              "fullStatus": {
+                "clock": 5400,
+                "addedClock": 300,
+                "displayClock": "90'+5'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "366",
+                  "guid": "479e0b8f-fbeb-4a27-ce19-2c6ab31ac811",
+                  "uid": "s:600~t:366",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "LWLWD",
+                  "displayName": "Sunderland",
+                  "name": "Sunderland",
+                  "abbreviation": "SUN",
+                  "location": "Sunderland",
+                  "color": "EB172B",
+                  "alternateColor": "FFB6C1",
+                  "score": "3",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "ff0000",
+                    "alternateColor": "ffffff"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/366/sunderland",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/366/sunderland",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:366&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/366/sunderland",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:366&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/366/sunderland",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:366&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:366&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/366/sunderland",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:366&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "1-1-3, 4 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 5
+                    },
+                    "pointsAgainst": {
+                      "value": 10
+                    },
+                    "awayGamesPlayed": {
+                      "value": 3
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 0
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 3
+                    },
+                    "points": {
+                      "value": 4
+                    },
+                    "homeWins": {
+                      "value": 1
+                    },
+                    "pointDifferential": {
+                      "value": -4
+                    },
+                    "homePointsAgainst": {
+                      "value": 2
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 1
+                    },
+                    "awayLosses": {
+                      "value": 2
+                    },
+                    "rank": {
+                      "value": 14
+                    },
+                    "homePointsFor": {
+                      "value": 1
+                    },
+                    "awayTies": {
+                      "value": 1
+                    },
+                    "wins": {
+                      "value": 1
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 6
+                    },
+                    "homeLosses": {
+                      "value": 1
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 8
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/366.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "5 GA, 1 SV",
+                      "athlete": {
+                        "id": "301449",
+                        "displayName": "Robin Roefs",
+                        "shortName": "R. Roefs",
+                        "fullName": "Robin Roefs",
+                        "lastName": "Roefs",
+                        "jersey": "22",
+                        "team": {
+                          "id": "366"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "382",
+                  "guid": "94fd5d7e-35b1-9d52-c9f2-4a37259bea36",
+                  "uid": "s:600~t:382",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "form": "WWWWW",
+                  "displayName": "Manchester City",
+                  "name": "Man City",
+                  "abbreviation": "MNC",
+                  "location": "Manchester City",
+                  "color": "99c5ea",
+                  "alternateColor": "000000",
+                  "score": "5",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "66ccff",
+                    "alternateColor": "ffffff"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/382/manchester-city",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/382/manchester-city",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:382&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/382/manchester-city",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:382&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/382/manchester-city",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:382&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:382&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/382/manchester-city",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:382&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "5-0-0, 15 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 5
+                    },
+                    "pointsAgainst": {
+                      "value": 5
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 2
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 0
+                    },
+                    "points": {
+                      "value": 15
+                    },
+                    "homeWins": {
+                      "value": 3
+                    },
+                    "pointDifferential": {
+                      "value": 8
+                    },
+                    "homePointsAgainst": {
+                      "value": 4
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 0
+                    },
+                    "awayLosses": {
+                      "value": 0
+                    },
+                    "rank": {
+                      "value": 1
+                    },
+                    "homePointsFor": {
+                      "value": 8
+                    },
+                    "awayTies": {
+                      "value": 0
+                    },
+                    "wins": {
+                      "value": 5
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 13
+                    },
+                    "homeLosses": {
+                      "value": 0
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 3
+                    },
+                    "awayPointsAgainst": {
+                      "value": 1
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/382.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "3 GA, 4 SV",
+                      "athlete": {
+                        "id": "217092",
+                        "displayName": "Gianluigi Donnarumma",
+                        "shortName": "G. Donnarumma",
+                        "fullName": "Gianluigi Donnarumma",
+                        "lastName": "Donnarumma",
+                        "jersey": "1",
+                        "team": {
+                          "id": "382"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "pccEventId": "401879272",
+              "onDisneyNetwork": false,
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=soccer&leagueAbbrev=eng.1&gameId=401879272",
+                  "text": "Summary",
+                  "shortText": "Summary"
+                }
+              ]
+            },
+            {
+              "id": "401878777",
+              "uid": "s:600~l:700~e:401878777~c:401878777",
+              "guid": "793bdf51-7cfc-3a22-9db6-9a2e4313f3e8",
+              "date": "2026-09-20T15:30:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "2026-27 English Premier League",
+              "shortName": "2026-27 English Premier League",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/match/_/gameId/401878777/manchester-united-fulham",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "recap",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/report/_/gameId/401878777",
+                  "text": "Report"
+                },
+                {
+                  "rel": [
+                    "team-stats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/soccer/team-stats/_/gameId/401878777/league/eng.1",
+                  "text": "Team Stats"
+                }
+              ],
+              "gamecastAvailable": true,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": true,
+              "wallclockAvailable": true,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "401878777",
+              "location": "Craven Cottage",
+              "season": 2026,
+              "seasonStartDate": "2026-06-01T04:00:00Z",
+              "seasonEndDate": "2027-06-01T03:59:00Z",
+              "seasonType": "1",
+              "playoff": false,
+              "seasonTypeHasGroups": false,
+              "group": {
+                "groupId": "1",
+                "name": "2026-27 English Premier League",
+                "abbreviation": "2026-27 English Premier League",
+                "shortName": "2026-27 English Premier League"
+              },
+              "altGameNote": "English Premier League",
+              "link": "https://www.espn.com/soccer/match/_/gameId/401878777/manchester-united-fulham",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "90'+4'",
+              "addedClock": 240,
+              "broadcasts": [
+                {
+                  "typeId": 1,
+                  "priority": 1,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 379,
+                  "broadcastId": 379,
+                  "name": "NBC",
+                  "shortName": "NBC",
+                  "callLetters": "NBC",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                },
+                {
+                  "typeId": 1,
+                  "priority": 2,
+                  "type": "TV",
+                  "isNational": true,
+                  "broadcasterId": 488,
+                  "broadcastId": 488,
+                  "name": "Telemundo",
+                  "shortName": "Tele",
+                  "callLetters": "Tele",
+                  "lang": "en",
+                  "region": "us",
+                  "slug": ""
+                }
+              ],
+              "broadcast": "NBC/Tele",
+              "odds": {
+                "details": "MAN +100",
+                "overUnder": 2.5,
+                "spread": 0.5,
+                "overOdds": -165,
+                "underOdds": 130,
+                "provider": {
+                  "id": "100",
+                  "name": "DraftKings",
+                  "priority": 1,
+                  "logos": [
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Light.svg",
+                      "rel": [
+                        "light"
+                      ]
+                    },
+                    {
+                      "href": "https://a.espncdn.com/i/betting/Draftkings_Dark.svg",
+                      "rel": [
+                        "dark"
+                      ]
+                    }
+                  ]
+                },
+                "home": {
+                  "moneyLine": 250
+                },
+                "away": {
+                  "moneyLine": 100
+                },
+                "draw": {
+                  "moneyLine": 275
+                },
+                "awayTeamOdds": {
+                  "favorite": true,
+                  "favoriteAtOpen": true,
+                  "underdog": false,
+                  "moneyLine": 100,
+                  "spreadOdds": -105,
+                  "team": {
+                    "id": "360",
+                    "abbreviation": "MAN",
+                    "displayName": "Manchester United",
+                    "name": "Man United"
+                  }
+                },
+                "homeTeamOdds": {
+                  "favorite": false,
+                  "favoriteAtOpen": false,
+                  "underdog": true,
+                  "moneyLine": 250,
+                  "spreadOdds": -130,
+                  "team": {
+                    "id": "370",
+                    "abbreviation": "FUL",
+                    "displayName": "Fulham",
+                    "name": "Fulham"
+                  }
+                },
+                "drawOdds": {
+                  "moneyLine": 275
+                },
+                "links": [
+                  {
+                    "language": "en-US",
+                    "rel": [
+                      "game",
+                      "desktop",
+                      "bets"
+                    ],
+                    "href": "https://sportsbook.draftkings.com/gateway?s=__s__&wpcid=__wpcid__&wpsrc=413&wpcn=ESPN&wpscn=Widget&wpcrn=BetSlipDeepLink&wpscid=__wpscid__&wpcrid=xx&preurl=https%3A%2F%2Fsportsbook.draftkings.com%2Fevent%2F34633056",
+                    "text": "Game",
+                    "shortText": "Game",
+                    "isExternal": true,
+                    "isPremium": false
+                  }
+                ],
+                "pointSpread": {
+                  "displayName": "Spread",
+                  "shortDisplayName": "Spread",
+                  "home": {
+                    "open": {
+                      "line": "+0.5",
+                      "odds": "-135"
+                    },
+                    "close": {
+                      "line": "+0.5",
+                      "odds": "-130"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "line": "-0.5",
+                      "odds": "-110"
+                    },
+                    "close": {
+                      "line": "-0.5",
+                      "odds": "-105"
+                    }
+                  }
+                },
+                "moneyline": {
+                  "displayName": "Moneyline",
+                  "shortDisplayName": "ML",
+                  "home": {
+                    "open": {
+                      "odds": "+230"
+                    },
+                    "close": {
+                      "odds": "+250"
+                    }
+                  },
+                  "away": {
+                    "open": {
+                      "odds": "+100"
+                    },
+                    "close": {
+                      "odds": "+100"
+                    }
+                  },
+                  "draw": {
+                    "open": {
+                      "odds": "+275"
+                    },
+                    "close": {
+                      "odds": "+275"
+                    }
+                  }
+                },
+                "total": {
+                  "displayName": "Total",
+                  "shortDisplayName": "Total",
+                  "over": {
+                    "open": {
+                      "line": "o2.5",
+                      "odds": "-180"
+                    },
+                    "close": {
+                      "line": "o2.5",
+                      "odds": "-165"
+                    }
+                  },
+                  "under": {
+                    "open": {
+                      "line": "u2.5",
+                      "odds": "+130"
+                    },
+                    "close": {
+                      "line": "u2.5",
+                      "odds": "+130"
+                    }
+                  }
+                },
+                "header": {
+                  "logo": {
+                    "light": "https://a.espncdn.com/i/espnbet/espn-bet-square-off.svg",
+                    "dark": "https://a.espncdn.com/i/espnbet/dark/espn-bet-square-off.svg",
+                    "exclusivesLogoDark": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg",
+                    "exclusivesLogoLight": "https://a.espncdn.com/i/espnbet/espn-bet-square-mint.svg"
+                  },
+                  "text": "Game Odds"
+                }
+              },
+              "fullStatus": {
+                "clock": 5400,
+                "addedClock": 240,
+                "displayClock": "90'+4'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "28",
+                  "name": "STATUS_FULL_TIME",
+                  "state": "post",
+                  "completed": true,
+                  "description": "Full Time",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "360",
+                  "guid": "6ebc2fd0-35d3-733b-5666-b75035a3bce9",
+                  "uid": "s:600~t:360",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "DLLWD",
+                  "displayName": "Manchester United",
+                  "name": "Man United",
+                  "abbreviation": "MAN",
+                  "location": "Manchester United",
+                  "color": "da020e",
+                  "alternateColor": "4169E1",
+                  "score": "1",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "away",
+                    "color": "0b3ca8",
+                    "alternateColor": "b90b13"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/360/manchester-united",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/360/manchester-united",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:360&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/360/manchester-united",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:360&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/360/manchester-united",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:360&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:360&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/360/manchester-united",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:360&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "1-2-2, 5 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 3
+                    },
+                    "pointsAgainst": {
+                      "value": 8
+                    },
+                    "awayGamesPlayed": {
+                      "value": 3
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 0
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 2
+                    },
+                    "points": {
+                      "value": 5
+                    },
+                    "homeWins": {
+                      "value": 1
+                    },
+                    "pointDifferential": {
+                      "value": 0
+                    },
+                    "homePointsAgainst": {
+                      "value": 3
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 2
+                    },
+                    "awayLosses": {
+                      "value": 1
+                    },
+                    "rank": {
+                      "value": 12
+                    },
+                    "homePointsFor": {
+                      "value": 5
+                    },
+                    "awayTies": {
+                      "value": 2
+                    },
+                    "wins": {
+                      "value": 1
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 0
+                    },
+                    "pointsFor": {
+                      "value": 8
+                    },
+                    "homeLosses": {
+                      "value": 1
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 2
+                    },
+                    "awayPointsAgainst": {
+                      "value": 5
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/360.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "1 GA, 6 SV",
+                      "athlete": {
+                        "id": "301425",
+                        "displayName": "Senne Lammens",
+                        "shortName": "S. Lammens",
+                        "fullName": "Senne Lammens",
+                        "lastName": "Lammens",
+                        "jersey": "1",
+                        "team": {
+                          "id": "360"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "370",
+                  "guid": "14acbd22-f709-1525-c5ab-1cb3ec8d1696",
+                  "uid": "s:600~t:370",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "form": "DWDLL",
+                  "displayName": "Fulham",
+                  "name": "Fulham",
+                  "abbreviation": "FUL",
+                  "location": "Fulham",
+                  "color": "ffffff",
+                  "alternateColor": "CC0000",
+                  "score": "1",
+                  "isNational": false,
+                  "uniform": {
+                    "type": "home",
+                    "color": "ffffff",
+                    "alternateColor": "000000"
+                  },
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/club/_/id/370/fulham",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/stats/_/id/370/fulham",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "stats",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:370&section=stats",
+                      "text": "Stats",
+                      "shortText": "Stats",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/fixtures/_/id/370/fulham",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "schedule",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:370&section=scores",
+                      "text": "Fixtures",
+                      "shortText": "Fixtures",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/results/_/id/370/fulham",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "results",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:370&section=scores",
+                      "text": "Results",
+                      "shortText": "Results",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/standings/_/league/eng.1",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "standings",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:370&section=standings",
+                      "text": "Standings",
+                      "shortText": "Standings",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/soccer/team/squad/_/id/370/fulham",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "squad",
+                        "sportscenter",
+                        "app",
+                        "team"
+                      ],
+                      "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~t:370&section=squad",
+                      "text": "Squad",
+                      "shortText": "Squad",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "0-2-3, 2 pts",
+                  "records": [],
+                  "group": "1",
+                  "recordStats": {
+                    "awayPointsFor": {
+                      "value": 0
+                    },
+                    "pointsAgainst": {
+                      "value": 8
+                    },
+                    "awayGamesPlayed": {
+                      "value": 2
+                    },
+                    "advanced": {
+                      "value": 0
+                    },
+                    "awayWins": {
+                      "value": 0
+                    },
+                    "deductions": {
+                      "value": 0
+                    },
+                    "losses": {
+                      "value": 3
+                    },
+                    "points": {
+                      "value": 2
+                    },
+                    "homeWins": {
+                      "value": 0
+                    },
+                    "pointDifferential": {
+                      "value": -3
+                    },
+                    "homePointsAgainst": {
+                      "value": 7
+                    },
+                    "gamesPlayed": {
+                      "value": 5
+                    },
+                    "ties": {
+                      "value": 2
+                    },
+                    "awayLosses": {
+                      "value": 1
+                    },
+                    "rank": {
+                      "value": 19
+                    },
+                    "homePointsFor": {
+                      "value": 5
+                    },
+                    "awayTies": {
+                      "value": 1
+                    },
+                    "wins": {
+                      "value": 0
+                    },
+                    "ppg": {
+                      "value": 0
+                    },
+                    "rankChange": {
+                      "value": 0
+                    },
+                    "homeTies": {
+                      "value": 1
+                    },
+                    "pointsFor": {
+                      "value": 5
+                    },
+                    "homeLosses": {
+                      "value": 2
+                    },
+                    "streak": {
+                      "value": 0
+                    },
+                    "homeGamesPlayed": {
+                      "value": 3
+                    },
+                    "awayPointsAgainst": {
+                      "value": 1
+                    }
+                  },
+                  "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/soccer/500-dark/370.png",
+                  "goalieSummary": [
+                    {
+                      "displayValue": "1 GA, 5 SV",
+                      "athlete": {
+                        "id": "153765",
+                        "displayName": "Bernd Leno",
+                        "shortName": "B. Leno",
+                        "fullName": "Bernd Leno",
+                        "lastName": "Leno",
+                        "jersey": "1",
+                        "team": {
+                          "id": "370"
+                        },
+                        "position": "G"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "neutralSite": false,
+              "conferenceCompetition": false,
+              "pccEventId": "401878777",
+              "onDisneyNetwork": false,
+              "appLinks": [
+                {
+                  "rel": [
+                    "summary",
+                    "sportscenter",
+                    "app",
+                    "event"
+                  ],
+                  "href": "sportscenter://x-callback-url/showGame?sportName=soccer&leagueAbbrev=eng.1&gameId=401878777",
+                  "text": "Summary",
+                  "shortText": "Summary"
                 }
               ]
             }

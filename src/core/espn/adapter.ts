@@ -87,7 +87,8 @@ function parseHeader(body: unknown, competition: Competition): Result[] {
     competitors: list(at(event, 'competitors'))?.map((c) => ({
       homeAway: at(c, 'homeAway'),
       name: str(at(c, 'displayName')),
-      shortName: str(at(c, 'shortDisplayName')),
+      // The header has no `shortDisplayName`; its `name` is the short name ("Heat").
+      shortName: str(at(c, 'name')),
       logoUrl: str(at(c, 'logo')),
       score: scoreText(at(c, 'score')),
     })),

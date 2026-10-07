@@ -51,7 +51,7 @@ describe('Past-day cache', () => {
 
     const nba = screen.getByRole('region', { name: 'NBA' });
     expect(await within(nba).findByText('Miami Heat')).toBeInTheDocument();
-    expect(within(nba).getByText('Boston Celtics')).toBeInTheDocument();
+    expect(within(nba).getByText('Atlanta Hawks')).toBeInTheDocument();
     expect(within(nba).getByText('Golden State Warriors')).toBeInTheDocument();
     expect(espn.headerRequests()).toHaveLength(4);
     expect(nbaHeaderRequests(espn).map((u) => u.searchParams.get('dates'))).toEqual([
@@ -111,7 +111,7 @@ describe('Pre-seeded cache', () => {
     const { espn } = renderApp({ storage, timeZone: 'America/New_York' });
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
     expect(within(nba).queryByText('Cached Hosts')).not.toBeInTheDocument();
     expect(await nbaDates(espn)).toEqual(['20261005-20261007']);
   });
@@ -150,7 +150,7 @@ describe('Manual refresh', () => {
 
     expect(nba.getByRole('status')).toHaveTextContent('Refreshing…');
     expect(nba.getByText('Golden State Warriors')).toBeInTheDocument();
-    expect(nba.getByText('Boston Celtics')).toBeInTheDocument();
+    expect(nba.getByText('Atlanta Hawks')).toBeInTheDocument();
     held.forEach((release) => release());
   });
 });
@@ -173,7 +173,7 @@ describe('Storage problems never break Results', () => {
     const { espn } = renderApp({ storage });
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
     expect(await nbaDates(espn)).toEqual(['20261005-20261007']);
   });
 
@@ -181,7 +181,7 @@ describe('Storage problems never break Results', () => {
     const { espn } = renderApp({ storage: createMemoryStorage({}, { throws: true }) });
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
     expect(await nbaDates(espn)).toEqual(['20261005-20261007']);
   });
 
@@ -193,7 +193,7 @@ describe('Storage problems never break Results', () => {
     renderApp({ storage });
 
     const nba = screen.getByRole('region', { name: 'NBA' });
-    expect(await within(nba).findByText('Boston Celtics')).toBeInTheDocument();
+    expect(await within(nba).findByText('Atlanta Hawks')).toBeInTheDocument();
     expect(within(nba).getByText('Golden State Warriors')).toBeInTheDocument();
   });
 });

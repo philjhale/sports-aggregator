@@ -22,6 +22,13 @@ export interface RenderAppOptions {
 
 export const DEFAULT_NOW = '2026-10-07T12:00:00Z';
 
+// The recordings come from real weeks, and no week has results for every
+// Competition (the Premier League paused 1-7 Oct), so some tests set a clock.
+/** Window 18-20 Sep in Europe/London: the recorded Premier League weekend. */
+export const PREMIER_LEAGUE_NOW = '2026-09-20T18:00:00Z';
+/** Window 2-4 Oct in Europe/London: the recorded Gallagher Premiership matches. */
+export const GALLAGHER_NOW = '2026-10-04T20:00:00Z';
+
 /**
  * Renders the whole app with only the outside world faked: ESPN (fetch),
  * the clock, the timezone/locale and browser storage.

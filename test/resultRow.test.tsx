@@ -2,10 +2,13 @@ import { screen, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import nbaHeader from './fixtures/espn/nba-header.json';
 import premierLeagueHeader from './fixtures/espn/premier-league-header.json';
+import nflHeader from './fixtures/espn/nfl-header.json';
 import { createFakeEspn, defaultHeaderFixtures } from './helpers/fakeEspn';
-import { renderApp } from './helpers/renderApp';
+import { withHeaderEvent, withHeaderStatus } from './helpers/patchEspn';
+import { PREMIER_LEAGUE_NOW, renderApp } from './helpers/renderApp';
 
-// Default Window: 5-7 Oct 2026 in Europe/London.
+// Default Window: 5-7 Oct 2026 in Europe/London. Premier League rows use the
+// 18-20 Sep clock, the week that was recorded.
 
 async function resultRow(competition: string, team: string) {
   const region = await screen.findByRole('region', { name: competition });
@@ -19,34 +22,37 @@ function logos(row: HTMLElement) {
   return Array.from(row.querySelectorAll('img')).map((img) => img.getAttribute('src'));
 }
 
-/** The NBA fixture with the Lakers' logo removed. */
+/** The NBA recording with the Lakers' logo removed. */
 function nbaWithoutLakersLogo() {
-  const header = structuredClone(nbaHeader);
-  for (const event of header.sports[0]!.leagues[0]!.events) {
-    for (const competitor of event.competitors as { displayName: string; logo?: string }[]) {
+  return withHeaderEvent(nbaHeader, '401898390', (event) => {
+    for (const competitor of event.competitors) {
       if (competitor.displayName === 'Los Angeles Lakers') delete competitor.logo;
     }
-  }
-  return header;
+  });
 }
 
 /**
- * The Premier League fixture with Everton v Liverpool given another final
- * status, shaped as ESPN reports soccer matches decided in extra time or on
- * penalties.
+ * The Premier League recording with Fulham v Manchester United given another
+ * final status, shaped as ESPN reports soccer matches decided in extra time or
+ * on penalties.
  */
-function premierLeagueWithEvertonStatus(name: string, detail: string) {
-  const header = structuredClone(premierLeagueHeader);
-  const event = header.sports[0]!.leagues[0]!.events.find((e) => e.id === '740102')!;
-  event.summary = detail;
-  event.fullStatus.type = {
-    ...event.fullStatus.type,
+function premierLeagueWithFulhamStatus(name: string, detail: string) {
+  return withHeaderStatus(premierLeagueHeader, '401878777', {
     name,
-    description: detail,
+    state: 'post',
+    completed: true,
     detail,
-    shortDetail: detail,
-  };
-  return header;
+  });
+}
+
+/** The NFL recording with Lions at Panthers decided in overtime, as ESPN reports it. */
+function nflWithOvertime() {
+  return withHeaderStatus(nflHeader, '401872978', {
+    name: 'STATUS_FINAL',
+    state: 'post',
+    completed: true,
+    detail: 'Final/OT',
+  });
 }
 
 /** Full team names shown in bold in a Result row. */
@@ -59,23 +65,24 @@ describe('Result rows', () => {
     renderApp();
 
     const row = await resultRow('NBA', 'Golden State Warriors');
-    expect(boldTeams(row)).toEqual(['Los Angeles Lakers']);
+    expect(boldTeams(row)).toEqual(['Golden State Warriors']);
   });
 
-  it.each([
-    ['Premier League', 'Everton'],
-    ['Gallagher Premiership', 'Sale Sharks'],
-  ])('bolds nobody on a %s draw', async (competition, team) => {
-    renderApp();
+  it('bolds nobody on a Premier League draw', async () => {
+    renderApp({ now: PREMIER_LEAGUE_NOW });
 
-    const row = await resultRow(competition, team);
+    const row = await resultRow('Premier League', 'Fulham');
+    expect(row).toHaveTextContent('Manchester United');
     expect(boldTeams(row)).toEqual([]);
   });
 
   it('marks a Result decided in overtime', async () => {
-    renderApp();
+    const espn = createFakeEspn({
+      header: { ...defaultHeaderFixtures, 'football/nfl': nflWithOvertime() },
+    });
+    renderApp({ espn });
 
-    const row = await resultRow('NFL', 'Green Bay Packers');
+    const row = await resultRow('NFL', 'Carolina Panthers');
     expect(within(row).getByText('OT')).toBeInTheDocument();
   });
 
@@ -86,19 +93,19 @@ describe('Result rows', () => {
     const espn = createFakeEspn({
       header: {
         ...defaultHeaderFixtures,
-        'soccer/eng.1': premierLeagueWithEvertonStatus(name, detail),
+        'soccer/eng.1': premierLeagueWithFulhamStatus(name, detail),
       },
     });
-    renderApp({ espn });
+    renderApp({ espn, now: PREMIER_LEAGUE_NOW });
 
-    const row = await resultRow('Premier League', 'Everton');
+    const row = await resultRow('Premier League', 'Fulham');
     expect(within(row).getByText(marker)).toBeInTheDocument();
   });
 
   it('shows no marker for a Result decided in regulation', async () => {
     renderApp();
 
-    const row = await resultRow('NFL', 'Seattle Seahawks');
+    const row = await resultRow('NFL', 'New Orleans Saints');
     expect(within(row).queryByText('OT')).not.toBeInTheDocument();
   });
 
@@ -120,7 +127,7 @@ describe('Result rows', () => {
 
     const row = await resultRow('NBA', 'Golden State Warriors');
     expect(row).toHaveTextContent('Los Angeles Lakers');
-    expect(row).toHaveTextContent('120');
+    expect(row).toHaveTextContent('98');
     expect(logos(row)).toEqual(['https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png']);
   });
 
@@ -142,11 +149,11 @@ describe('Status filtering', () => {
     const espn = createFakeEspn({
       header: {
         ...defaultHeaderFixtures,
-        'soccer/eng.1': premierLeagueWithEvertonStatus('STATUS_FORFEIT', 'FT'),
+        'soccer/eng.1': premierLeagueWithFulhamStatus('STATUS_FORFEIT', 'FT'),
       },
     });
-    renderApp({ espn });
+    renderApp({ espn, now: PREMIER_LEAGUE_NOW });
 
-    expect(await resultRow('Premier League', 'Everton')).toHaveTextContent('Liverpool');
+    expect(await resultRow('Premier League', 'Fulham')).toHaveTextContent('Manchester United');
   });
 });
