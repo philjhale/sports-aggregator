@@ -18,7 +18,7 @@ function cachedResult(kickoff: string, home: string): Result {
     id: `cached-${home}`,
     competitionId: 'nba',
     kickoff,
-    home: { name: home, shortName: home, score: 101 },
+    home: { name: home, shortName: 'CAC', score: 101 },
     away: { name: 'Cached Visitors', shortName: 'Visitors', score: 99 },
     matchDetailsUrl: 'https://www.espn.com/nba/game/_/gameId/1',
     winner: 'home',

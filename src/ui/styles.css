@@ -22,6 +22,41 @@ body {
   border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
 }
 
+.team {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.team-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+  object-fit: contain;
+}
+
+/* Full names on wide screens, short names below the mobile breakpoint. */
+.team-name-short {
+  display: none;
+}
+
+@media (max-width: 40rem) {
+  .team-name-full {
+    display: none;
+  }
+
+  .team-name-short {
+    display: inline;
+  }
+}
+
+.extra-time {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
 .window-selector {
   display: flex;
   flex-wrap: wrap;
@@ -48,4 +83,28 @@ body {
   margin-top: 2rem;
   font-size: 0.85rem;
   opacity: 0.7;
+}
+
+.competitions-panel__body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.competitions-panel__sport {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.competitions-panel__sport legend {
+  font-weight: 600;
+}
+
+.competitions-panel__option {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
 }

@@ -4,6 +4,7 @@ import { createResultsService } from '../core/resultsService';
 import { createSettingsStore } from '../core/settings';
 import type { CompetitionOutcome, ResultsService } from '../core/resultsService';
 import type { Competition, CompetitionConfig, WindowDays } from '../core/types';
+import { CompetitionsPanel } from './CompetitionsPanel';
 import { Footer } from './Footer';
 import { ResultRow } from './ResultRow';
 import { WindowSelector } from './WindowSelector';
@@ -26,12 +27,22 @@ export interface AppProps {
 
 export function App({ deps, config = competitionConfig }: AppProps) {
   const service = useMemo(() => createResultsService(deps), [deps]);
-  const sections = useMemo(() => service.layout(config), [service, config]);
-  const settings = useMemo(() => createSettingsStore(deps.storage), [deps.storage]);
+  const settings = useMemo(
+    () => createSettingsStore(deps.storage, config.competitions.map((c) => c.id)),
+    [deps.storage, config],
+  );
   const [windowDays, setWindowDays] = useState<WindowDays>(() => settings.load().window);
   const changeWindow = (days: WindowDays) => setWindowDays(settings.update({ window: days }).window);
   // Bumped by the refresh button; each Competition refetches when it changes.
   const [refreshCount, setRefreshCount] = useState(0);
+  const [hidden, setHidden] = useState<ReadonlySet<string>>(() => new Set(settings.load().hidden));
+  const toggleCompetition = (id: string, shown: boolean) => {
+    const next = new Set(hidden);
+    if (shown) next.delete(id);
+    else next.add(id);
+    setHidden(new Set(settings.update({ hidden: [...next] }).hidden));
+  };
+  const sections = useMemo(() => service.layout(config, hidden), [service, config, hidden]);
 
   return (
     <div className="app">
@@ -41,8 +52,14 @@ export function App({ deps, config = competitionConfig }: AppProps) {
         <button type="button" onClick={() => setRefreshCount((n) => n + 1)}>
           Refresh
         </button>
+        <CompetitionsPanel config={config} hidden={hidden} onToggle={toggleCompetition} />
       </header>
       <main>
+        {sections.length === 0 && (
+          <p className="empty">
+            All Competitions are hidden. Choose some to show under Competitions.
+          </p>
+        )}
         {sections.map(({ sport, competitions }) => (
           <Section key={sport.id} title={sport.name} level={2}>
             {competitions.map((competition) => (
