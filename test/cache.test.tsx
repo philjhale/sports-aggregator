@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { cacheKey, cacheValue } from '../src/core/cache';
 import { SETTINGS_KEY } from '../src/core/settings';
 import type { Result } from '../src/core/types';
+import { createFakeEspn } from './helpers/fakeEspn';
 import type { FakeEspn } from './helpers/fakeEspn';
 import { createMemoryStorage } from './helpers/memoryStorage';
 import { renderApp } from './helpers/renderApp';
@@ -131,6 +132,26 @@ describe('Manual refresh', () => {
       '20261006-20261007',
     ]);
     expect(await within(nba).findByText('Golden State Warriors')).toBeInTheDocument();
+  });
+  it('keeps loaded Results visible while the refresh is in flight', async () => {
+    const espn = createFakeEspn();
+    let hold = false;
+    const held: (() => void)[] = [];
+    const gated: typeof fetch = async (input, init) => {
+      if (hold) await new Promise<void>((resolve) => held.push(resolve));
+      return espn.fetch(input, init);
+    };
+    const { user } = renderApp({ espn: { ...espn, fetch: gated } });
+    const nba = within(screen.getByRole('region', { name: 'NBA' }));
+    await nba.findByText('Golden State Warriors');
+
+    hold = true;
+    await user.click(screen.getByRole('button', { name: 'Refresh' }));
+
+    expect(nba.getByRole('status')).toHaveTextContent('Refreshing…');
+    expect(nba.getByText('Golden State Warriors')).toBeInTheDocument();
+    expect(nba.getByText('Boston Celtics')).toBeInTheDocument();
+    held.forEach((release) => release());
   });
 });
 

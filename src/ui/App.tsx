@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import { competitionConfig } from '../core/config';
 import { createResultsService } from '../core/resultsService';
 import { createSettingsStore } from '../core/settings';
@@ -98,13 +98,10 @@ function CompetitionResults({
   // Bumped by Retry to reload just this Competition.
   const [attempt, setAttempt] = useState(0);
 
-  // A Retry keeps what is shown until the new outcome arrives; other reloads start afresh.
-  const retrying = useRef(false);
-
+  // Every reload (Retry, Refresh, Window change) keeps what is shown until the
+  // new outcome arrives, so the page never blanks out.
   useEffect(() => {
     let current = true;
-    if (!retrying.current) setOutcome(undefined);
-    retrying.current = false;
     setLoading(true);
     void service.loadCompetition(competition, windowDays).then((next) => {
       if (!current) return;
@@ -116,15 +113,12 @@ function CompetitionResults({
     };
   }, [service, competition, windowDays, refreshCount, attempt]);
 
-  const retry = () => {
-    retrying.current = true;
-    setAttempt((n) => n + 1);
-  };
+  const retry = () => setAttempt((n) => n + 1);
 
   return (
     <Section title={competition.name} level={3}>
       {loading && (
-        <p role="status">{outcome === undefined ? 'Loading results…' : 'Retrying…'}</p>
+        <p role="status">{loadingMessage(outcome)}</p>
       )}
       {outcome?.status === 'error' && (
         <div className="competition-error">
@@ -148,6 +142,11 @@ function CompetitionResults({
       )}
     </Section>
   );
+}
+
+function loadingMessage(shown: CompetitionOutcome | undefined): string {
+  if (shown === undefined) return 'Loading results…';
+  return shown.status === 'error' ? 'Retrying…' : 'Refreshing…';
 }
 
 function Section({
