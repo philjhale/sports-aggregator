@@ -18,8 +18,13 @@ export function ResultRow({
 
   return (
     <li className="result">
-      <Team team={result.home} />
-      <Team team={result.away} />
+      <Team team={result.home} won={result.winner === 'home'} />
+      <Team team={result.away} won={result.winner === 'away'} />
+      {result.extraTime && (
+        <abbr className="extra-time" title="Decided beyond regulation time">
+          {result.extraTime}
+        </abbr>
+      )}
       <time dateTime={result.kickoff}>{date}</time>
       <a href={result.matchDetailsUrl} target="_blank" rel="noopener noreferrer">
         Match Details
@@ -28,10 +33,24 @@ export function ResultRow({
   );
 }
 
-function Team({ team }: { team: TeamResult }) {
+function Team({ team, won }: { team: TeamResult; won: boolean }) {
+  const content = (
+    <>
+      <span className="team-name">
+        <span className="team-name-full">{team.name}</span>
+        <span className="team-name-short">{team.shortName}</span>
+      </span>{' '}
+      <span className="team-score">{team.score}</span>
+    </>
+  );
   return (
     <span className="team">
-      <span className="team-name">{team.name}</span> <span className="team-score">{team.score}</span>
+      {team.logoUrl ? (
+        <img className="team-logo" src={team.logoUrl} alt="" width={24} height={24} loading="lazy" />
+      ) : (
+        <span className="team-logo" aria-hidden="true" />
+      )}
+      {won ? <strong>{content}</strong> : content}
     </span>
   );
 }

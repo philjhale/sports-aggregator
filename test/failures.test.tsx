@@ -2,7 +2,10 @@ import { screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { createFakeEspn, defaultHeaderFixtures } from './helpers/fakeEspn';
 import type { FakeEspn } from './helpers/fakeEspn';
+import { createMemoryStorage } from './helpers/memoryStorage';
 import { renderApp } from './helpers/renderApp';
+import { cacheKey, cacheValue } from '../src/core/cache';
+import type { Result } from '../src/core/types';
 
 const isHeader = (url: URL) => url.pathname === '/apis/v2/scoreboard/header';
 const isPremierLeague = (url: URL) =>
@@ -55,6 +58,37 @@ describe('Per-day fallback when the header request fails', () => {
       'href',
       'https://www.espn.com/soccer/match/_/gameId/740103/fulham-manchester-city',
     );
+  });
+});
+
+describe('Per-day fallback with cached past days', () => {
+  it('requests only the uncached days and shows cached and fetched Results together', async () => {
+    // Today is 7 Oct (Europe/London); 5 Oct is a complete, cacheable past day.
+    const cached: Result = {
+      id: 'cached-1',
+      competitionId: 'premier-league',
+      kickoff: '2026-10-05T14:00:00Z',
+      home: { name: 'Cached Hosts', shortName: 'Hosts', score: 2 },
+      away: { name: 'Cached Visitors', shortName: 'Visitors', score: 0 },
+      matchDetailsUrl: 'https://www.espn.com/soccer/match/_/gameId/1',
+      winner: 'home',
+    };
+    const storage = createMemoryStorage({
+      [cacheKey('premier-league', 'Europe/London', '2026-10-05')]: cacheValue([cached]),
+    });
+    const espn = createFakeEspn();
+    espn.failWhen((url) => isHeader(url) && isPremierLeague(url));
+    renderApp({ espn, storage });
+
+    const rows = await rowsIn('Premier League');
+    expect(rows.map((r) => r.textContent)).toEqual([
+      expect.stringContaining('Manchester City'),
+      expect.stringContaining('Cached Hosts'),
+    ]);
+    expect(siteScoreboardRequests(espn).map((u) => u.searchParams.get('dates')).sort()).toEqual([
+      '20261006',
+      '20261007',
+    ]);
   });
 });
 

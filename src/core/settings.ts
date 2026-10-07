@@ -1,0 +1,87 @@
+/**
+ * Settings store: the viewer's preferences, persisted in browser storage under
+ * their own key (separate from the results cache).
+ *
+ * Tolerant by design: unavailable storage, bad JSON, a wrong shape or an
+ * out-of-range value never throws. Each field falls back to its default on
+ * its own, so one bad field doesn't discard the others, and writes that fail
+ * are swallowed (the app just won't remember).
+ *
+ * To add a setting: add the field to `Settings` and `DEFAULT_SETTINGS`, and a
+ * reader for it in `readSettings`.
+ */
+import { DEFAULT_WINDOW, WINDOW_DAYS } from './types';
+import type { WindowDays } from './types';
+
+export const SETTINGS_KEY = 'sports-aggregator:settings:v1';
+
+export interface Settings {
+  window: WindowDays;
+  /** Ids of Competitions the viewer has hidden. */
+  hidden: readonly string[];
+}
+
+export const DEFAULT_SETTINGS: Settings = {
+  window: DEFAULT_WINDOW,
+  hidden: [],
+};
+
+export interface SettingsStore {
+  /** The stored settings, with defaults for anything missing or invalid. */
+  load(): Settings;
+  /** Merge `changes` into the stored settings, save, and return the result. */
+  update(changes: Partial<Settings>): Settings;
+}
+
+/**
+ * @param knownCompetitionIds When given, stored hidden ids not in this list
+ *   (e.g. a Competition since removed from config) are dropped on load.
+ */
+export function createSettingsStore(
+  storage: Storage | undefined,
+  knownCompetitionIds?: readonly string[],
+): SettingsStore {
+  function load(): Settings {
+    const settings = readSettings(readJson(storage));
+    if (!knownCompetitionIds) return settings;
+    return { ...settings, hidden: settings.hidden.filter((id) => knownCompetitionIds.includes(id)) };
+  }
+
+  return {
+    load,
+    update(changes) {
+      const next = { ...load(), ...changes };
+      try {
+        storage?.setItem(SETTINGS_KEY, JSON.stringify(next));
+      } catch {
+        // Storage full or blocked: carry on without remembering.
+      }
+      return next;
+    },
+  };
+}
+
+function readJson(storage: Storage | undefined): unknown {
+  try {
+    const raw = storage?.getItem(SETTINGS_KEY);
+    return raw == null ? undefined : JSON.parse(raw);
+  } catch {
+    return undefined;
+  }
+}
+
+function readSettings(raw: unknown): Settings {
+  const stored = typeof raw === 'object' && raw !== null ? (raw as Record<string, unknown>) : {};
+  return {
+    window: isWindowDays(stored.window) ? stored.window : DEFAULT_SETTINGS.window,
+    hidden: isStringArray(stored.hidden) ? stored.hidden : DEFAULT_SETTINGS.hidden,
+  };
+}
+
+function isWindowDays(value: unknown): value is WindowDays {
+  return (WINDOW_DAYS as readonly unknown[]).includes(value);
+}
+
+function isStringArray(value: unknown): value is string[] {
+  return Array.isArray(value) && value.every((v) => typeof v === 'string');
+}

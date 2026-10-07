@@ -8,6 +8,7 @@
  *
  * The outside world (fetch, clock, timezone, storage) is injected.
  */
+import { loadWithPastDayCache } from './cache';
 import {
   headerUrl,
   parseHeader,
@@ -17,12 +18,13 @@ import {
 import type {
   Competition,
   CompetitionConfig,
+  LocalDate,
   ResolvedWindow,
   Result,
   Sport,
   WindowDays,
 } from './types';
-import { localDateOf, resolveWindow } from './window';
+import { resolveWindow } from './window';
 
 export type CompetitionOutcome =
   | { status: 'results'; results: Result[] }
@@ -63,11 +65,19 @@ export function createResultsService(deps: ResultsServiceDeps): ResultsService {
 
     async loadCompetition(competition, days) {
       const window = resolveWindow(days, deps.now(), deps.timeZone);
+      const fetchSpan = (dates: LocalDate[]): Promise<Result[]> => {
+        const span: ResolvedWindow = { ...window, dates, start: dates[0] ?? window.end };
+        return fetchCompetitionResults(deps.fetch, competition, span);
+      };
       try {
-        const inWindow = new Set(window.dates);
-        const results = (await fetchCompetitionResults(deps.fetch, competition, window))
-          .filter((r) => inWindow.has(localDateOf(new Date(r.kickoff), deps.timeZone)))
-          .sort((a, b) => b.kickoff.localeCompare(a.kickoff));
+        const results = (
+          await loadWithPastDayCache(window.dates, fetchSpan, {
+            storage: deps.storage,
+            competitionId: competition.id,
+            timeZone: deps.timeZone,
+            today: window.end,
+          })
+        ).sort((a, b) => b.kickoff.localeCompare(a.kickoff));
         return results.length > 0 ? { status: 'results', results } : { status: 'empty' };
       } catch {
         return { status: 'error', message: `Couldn't load ${competition.name} results.` };
