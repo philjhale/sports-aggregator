@@ -21,7 +21,7 @@ export interface Settings {
   hidden: readonly string[];
 }
 
-export const DEFAULT_SETTINGS: Settings = {
+const DEFAULT_SETTINGS: Settings = {
   window: DEFAULT_WINDOW,
   hidden: [],
 };
