@@ -21,7 +21,7 @@ export function addDays(date: LocalDate, delta: number): LocalDate {
 export function resolveWindow(days: WindowDays, now: Date, timeZone: string): ResolvedWindow {
   const today = localDateOf(now, timeZone);
   const dates = Array.from({ length: days }, (_, i) => addDays(today, i - (days - 1)));
-  return { days, timeZone, dates, start: dates[0] ?? today, end: today };
+  return { dates, end: today };
 }
 
 /** `YYYY-MM-DD` → `YYYYMMDD`, the form ESPN's `dates` parameter takes. */
