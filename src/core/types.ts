@@ -61,10 +61,7 @@ export type LocalDate = string;
 
 /** A Window resolved against a "now" and timezone. */
 export interface ResolvedWindow {
-  days: WindowDays;
-  timeZone: string;
   /** Oldest first; the last entry is today. */
   dates: LocalDate[];
-  start: LocalDate;
   end: LocalDate;
 }
