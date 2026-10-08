@@ -1,6 +1,6 @@
 # sports-aggregator
 
-A quiet, browser-only summary of recent match Results across several Competitions, using ESPN's free unofficial API. There is no backend and no API key (see `docs/adr/0001-espn-unofficial-api-direct-from-browser.md`). Domain terms (Sport, Competition, Result, Window, Match Details) are defined in `GLOSSARY.md`.
+Shows summary of recent match results across several competitions using [ESPN's free unofficial API](https://github.com/pseudo-r/Public-ESPN-API). This was created as a playground for testing some of [Matt Pocock's skills](https://www.aihero.dev/skills) like `/pr` and `/implement-spec`.
 
 ## Local development
 
@@ -15,24 +15,10 @@ npm run preview   # serve the built dist/ locally
 
 The app calls ESPN directly from the browser, so the dev server needs internet access to show real Results.
 
-## Tests and type-check
-
-```sh
-npm test            # Vitest, once
-npm run test:watch  # Vitest, watch mode
-npm run typecheck   # tsc --noEmit
-```
-
-Tests render the whole app in jsdom. `test/helpers/renderApp.tsx` injects a fake ESPN `fetch` (`fakeEspn.ts`), a fixed clock and timezone, and in-memory storage (`memoryStorage.ts`).
-
-The ESPN fixtures in `test/fixtures/espn/` are trimmed recordings of live responses. Re-record them with `node test/fixtures/record.mjs`; see `test/fixtures/README.md`.
 
 ## Deploy
 
 `.github/workflows/ci.yml` type-checks and tests every pull request. On push to `main` it also builds and deploys `dist/` to GitHub Pages using the official Pages actions.
-
-- One-time setup: in the repo's **Settings > Pages**, set **Source** to **GitHub Actions**.
-- The site is served from the `/sports-aggregator/` project sub-path, set by `base` in `vite.config.ts`. If you rename the repo, update `base` to match.
 
 ## Adding a Competition or Sport
 
