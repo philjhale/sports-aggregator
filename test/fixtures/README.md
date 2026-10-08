@@ -20,6 +20,10 @@ The default test clock is 7 Oct 2026, Europe/London (Window 5-7 Oct). The Premie
 
 ESPN returns a postponed, scheduled or in-progress match only while it is one, and overtime, extra time and shootouts only when they happen. Where a test needs one, it changes a single recorded event with a helper in `test/helpers/patchEspn.ts` and says so; the rest of the response stays as recorded. The same helper makes the malformed events (missing competitor, missing scores) the adapter must skip.
 
+## Contract
+
+`test/fixtures.contract.test.ts` fails when a recorded event lacks a field the adapter reads. Add a path there whenever the adapter starts reading a new one.
+
 ## Re-recording
 
 Run `node test/fixtures/record.mjs`. Team names, scores and ids are asserted in tests, so ESPN correcting a past result would show up as a failing test.

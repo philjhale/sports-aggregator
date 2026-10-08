@@ -192,3 +192,18 @@ All four Windows stay well under the 75 default cap only if `limit=1000` is pass
 **Fallback** if the header endpoint breaks: use the site scoreboard with `dates=YYYYMMDD&tz=…`, one request per day. That is 1, 3, 7 or 14 requests per competition, so 4, 12, 28 or 56 in total. The `dates=YYYYMM&limit=1000` call is not a better fallback for these Windows. A Window that crosses a month needs 2 calls. An NBA month is up to about 3.2 MB raw. You also over-fetch up to a month to get 1 day.
 
 Do not use these: core (`$ref` fan-out), cdn (single day only, heavy wrapper), or NFL `week` (does not align with calendar days).
+
+## Response shapes the adapter reads
+
+The header and the site scoreboard name the same data differently. Mixing them up is the easy mistake: fixtures that borrow a field from the other shape pass tests but not real ESPN.
+
+| Data | Header (`sports[0].leagues[0].events[]`) | Site scoreboard (`events[]`) |
+|---|---|---|
+| Status | `fullStatus.type` (`name`, `completed`, `detail`), `status` is the state (`pre`/`in`/`post`) | `competitions[0].status.type` |
+| Competitors | `competitors[]`, flat | `competitions[0].competitors[]`, team under `team` |
+| Team name | `displayName` | `team.displayName` |
+| Short team name | `name` (no `shortDisplayName`) | `team.shortDisplayName` |
+| Logo | `logo` | `team.logo` |
+| Web link | `link` | `links[]` with `rel` `summary` + `desktop` |
+
+`test/fixtures.contract.test.ts` pins these paths against the recorded fixtures. To re-check against the live API, run `node test/fixtures/record.mjs` and then `npm test`. Recording details: `test/fixtures/README.md`.

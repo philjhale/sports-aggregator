@@ -4,6 +4,7 @@
  * response and changes one recorded event, so the rest stays exactly as ESPN
  * sent it.
  */
+// biome-ignore lint/suspicious/noExplicitAny: patches arbitrary recorded ESPN JSON
 type Json = Record<string, any>;
 
 interface Status {
