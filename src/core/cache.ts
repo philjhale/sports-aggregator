@@ -8,14 +8,18 @@
  * cached, so they are always included). That keeps it to one request per
  * Competition.
  *
+ * Empty days are not stored, so a bad empty response is retried next load.
+ * Entries older than the largest Window are deleted on each load.
+ *
  * Tolerant by design: unavailable or full storage, bad JSON, a wrong shape or
  * another schema version never throws; the day is just treated as uncached.
  * Fetch failures are not swallowed: they propagate to the caller.
  */
+import { WINDOW_DAYS } from './types';
 import type { LocalDate, Result } from './types';
 import { addDays, localDateOf } from './window';
 
-export const CACHE_VERSION = 1;
+const CACHE_VERSION = 1;
 const KEY_PREFIX = `sports-aggregator:cache:v${CACHE_VERSION}`;
 
 /** Fetch the Results kicking off on `dates` (oldest first, contiguous, ending today). */
@@ -80,8 +84,9 @@ export async function loadWithPastDayCache(
 
   for (const date of uncachedDates.filter(cacheable)) {
     const day = fetched.filter((r) => localDateOf(new Date(r.kickoff), timeZone) === date);
-    write(storage, key(date), cacheValue(day));
+    if (day.length > 0) write(storage, key(date), cacheValue(day));
   }
+  prune(storage, addDays(today, -Math.max(...WINDOW_DAYS)));
 
   return [...cached, ...fetched];
 }
@@ -95,6 +100,22 @@ function read(storage: Storage | undefined, key: string): Result[] | undefined {
     return parsed.results;
   } catch {
     return undefined;
+  }
+}
+
+/** Delete cache entries for dates before `oldest` (any Competition or timezone). */
+function prune(storage: Storage | undefined, oldest: LocalDate): void {
+  try {
+    if (!storage) return;
+    const stale: string[] = [];
+    for (let i = 0; i < storage.length; i++) {
+      const key = storage.key(i);
+      // Keys end in `:YYYY-MM-DD`.
+      if (key?.startsWith(`${KEY_PREFIX}:`) && key.slice(-10) < oldest) stale.push(key);
+    }
+    stale.forEach((key) => storage.removeItem(key));
+  } catch {
+    // Storage blocked: nothing to prune.
   }
 }
 
@@ -124,6 +145,7 @@ function isResultLike(value: unknown): boolean {
     typeof r.id === 'string' &&
     typeof r.competitionId === 'string' &&
     typeof r.kickoff === 'string' &&
+    !Number.isNaN(Date.parse(r.kickoff)) &&
     (r.winner === 'home' || r.winner === 'away' || r.winner === 'draw') &&
     typeof r.matchDetailsUrl === 'string' &&
     team(r.home) &&

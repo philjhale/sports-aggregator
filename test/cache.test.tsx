@@ -54,9 +54,27 @@ describe('Past-day cache', () => {
     expect(within(nba).getByText('Atlanta Hawks')).toBeInTheDocument();
     expect(within(nba).getByText('Golden State Warriors')).toBeInTheDocument();
     expect(espn.headerRequests()).toHaveLength(4);
+    // Past days with no Results are not cached, so the span still starts at the first of them.
     expect(nbaHeaderRequests(espn).map((u) => u.searchParams.get('dates'))).toEqual([
-      '20261006-20261007',
+      '20261001-20261007',
     ]);
+  });
+
+  it('does not store past days that had no Results', async () => {
+    const { storage, user } = renderApp();
+    await user.click(screen.getByRole('radio', { name: '7 days' }));
+    await within(screen.getByRole('region', { name: 'NBA' })).findByText('Miami Heat');
+    expect(storage.getItem(cacheKey('nba', 'Europe/London', '2026-10-02'))).toBeNull();
+  });
+
+  it('deletes cached days older than the largest Window', async () => {
+    const old = cacheKey('nba', 'Europe/London', '2026-09-01');
+    const storage = createMemoryStorage({
+      [old]: cacheValue([cachedResult('2026-09-01T18:00:00Z', 'Ancient')]),
+    });
+    renderApp({ storage });
+    await within(screen.getByRole('region', { name: 'NBA' })).findByText('Golden State Warriors');
+    expect(storage.getItem(old)).toBeNull();
   });
 });
 
@@ -129,7 +147,7 @@ describe('Manual refresh', () => {
     await waitFor(() => expect(espn.headerRequests()).toHaveLength(8));
     expect(nbaHeaderRequests(espn).map((u) => u.searchParams.get('dates'))).toEqual([
       '20261005-20261007',
-      '20261006-20261007',
+      '20261005-20261007',
     ]);
     expect(await within(nba).findByText('Golden State Warriors')).toBeInTheDocument();
   });

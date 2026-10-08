@@ -2,6 +2,7 @@ import { useEffect, useId, useMemo, useState } from 'react';
 import { competitionConfig } from '../core/config';
 import { createResultsService } from '../core/resultsService';
 import { createSettingsStore } from '../core/settings';
+import { groupBySport } from '../core/sports';
 import type { CompetitionOutcome, ResultsService } from '../core/resultsService';
 import type { Competition, CompetitionConfig, WindowDays } from '../core/types';
 import { CompetitionsPanel } from './CompetitionsPanel';
@@ -43,7 +44,7 @@ export function App({ deps, config = competitionConfig }: AppProps) {
     else next.add(id);
     setHidden(new Set(settings.update({ hidden: [...next] }).hidden));
   };
-  const sections = useMemo(() => service.layout(config, hidden), [service, config, hidden]);
+  const sections = useMemo(() => groupBySport(config, hidden), [config, hidden]);
 
   return (
     <div className="app">

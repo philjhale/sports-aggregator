@@ -10,7 +10,7 @@
 import type { Competition, EspnSource, LocalDate, Result, Team, Winner } from '../types';
 import { compactDate } from '../window';
 
-export class EspnParseError extends Error {}
+class EspnParseError extends Error {}
 
 /**
  * Fetch one Competition's Results kicking off on `dates` (oldest first,
@@ -43,7 +43,7 @@ export async function fetchResults(
 }
 
 async function getJson(fetchFn: typeof fetch, url: string): Promise<unknown> {
-  const response = await fetchFn(url);
+  const response = await fetchFn(url, { signal: AbortSignal.timeout(10_000) });
   if (!response.ok) throw new Error(`HTTP ${response.status} for ${url}`);
   return response.json();
 }
