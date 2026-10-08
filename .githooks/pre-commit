@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Enabled by `npm install` (the prepare script sets core.hooksPath).
+set -e
+npm run typecheck --silent
+npm run lint --silent

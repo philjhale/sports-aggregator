@@ -104,6 +104,7 @@ function CompetitionResults({
 
   // Every reload (Retry, Refresh, Window change) keeps what is shown until the
   // new outcome arrives, so the page never blanks out.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: refreshCount and attempt only trigger a reload
   useEffect(() => {
     let current = true;
     setLoading(true);

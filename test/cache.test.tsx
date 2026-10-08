@@ -151,7 +151,7 @@ describe('Manual refresh', () => {
     expect(nba.getByRole('status')).toHaveTextContent('Refreshing…');
     expect(nba.getByText('Golden State Warriors')).toBeInTheDocument();
     expect(nba.getByText('Atlanta Hawks')).toBeInTheDocument();
-    held.forEach((release) => release());
+    for (const release of held) release();
   });
 });
 
