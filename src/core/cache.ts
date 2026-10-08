@@ -113,7 +113,7 @@ function prune(storage: Storage | undefined, oldest: LocalDate): void {
       // Keys end in `:YYYY-MM-DD`.
       if (key?.startsWith(`${KEY_PREFIX}:`) && key.slice(-10) < oldest) stale.push(key);
     }
-    stale.forEach((key) => storage.removeItem(key));
+    for (const key of stale) storage.removeItem(key);
   } catch {
     // Storage blocked: nothing to prune.
   }

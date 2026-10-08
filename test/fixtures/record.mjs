@@ -64,10 +64,10 @@ for (const [file, { request, ids }] of Object.entries(headers)) {
   const body = await get(header(request));
   const league = body.sports[0].leagues[0];
   league.events = keep(league.events, ids, file);
-  writeFileSync(join(out, file), JSON.stringify(body, null, 2) + '\n');
+  writeFileSync(join(out, file), `${JSON.stringify(body, null, 2)}\n`);
 }
 for (const [file, { ids, ...request }] of Object.entries(scoreboards)) {
   const body = await get(site(request));
   body.events = keep(body.events, ids, file);
-  writeFileSync(join(out, file), JSON.stringify(body, null, 2) + '\n');
+  writeFileSync(join(out, file), `${JSON.stringify(body, null, 2)}\n`);
 }
