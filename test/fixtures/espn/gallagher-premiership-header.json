@@ -1,0 +1,573 @@
+{
+  "sports": [
+    {
+      "id": "300",
+      "uid": "s:300",
+      "guid": "09520a45-ed08-3eab-ba5f-f22554cc7d20",
+      "name": "Rugby",
+      "slug": "rugby",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-rugby.png",
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ],
+          "width": 500,
+          "height": 500
+        }
+      ],
+      "leagues": [
+        {
+          "id": "8007",
+          "uid": "s:300~l:8007",
+          "name": "Gallagher Prem",
+          "abbreviation": "Prem Rugby",
+          "shortName": "Prem Rugby",
+          "slug": "267979",
+          "tag": "267979",
+          "isTournament": true,
+          "smartdates": [
+            "2026-10-04T07:00Z",
+            "2026-10-09T07:00Z",
+            "2026-10-10T07:00Z"
+          ],
+          "events": [
+            {
+              "id": "604619",
+              "uid": "s:300~l:8007~e:604619~c:604619",
+              "guid": "178f19c5-b4f0-32ba-9247-84b4d19fa7d1",
+              "date": "2026-10-02T18:45:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "Bath Rugby vs Exeter Chiefs",
+              "shortName": "BAT VS EXE",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/match/_/gameId/604619/league/267979/exeter-chiefs-bath-rugby",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "matchstats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/matchstats/_/gameId/604619/league/267979",
+                  "text": "Match Stats"
+                }
+              ],
+              "gamecastAvailable": false,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "wallclockAvailable": false,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "604619",
+              "location": "Bath",
+              "season": 2027,
+              "seasonStartDate": "2026-08-30T04:00:00Z",
+              "seasonEndDate": "2027-07-01T03:59:00Z",
+              "seasonType": "1",
+              "seasonTypeHasGroups": true,
+              "group": {
+                "groupId": "1",
+                "name": "2025/26 Gallagher Premiership",
+                "abbreviation": "2025/26 Gallagher Premiership",
+                "shortName": "2025/26 Gallagher Premiership"
+              },
+              "link": "https://www.espn.com/rugby/match/_/gameId/604619/league/267979/exeter-chiefs-bath-rugby",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "1'",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "1'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "FT",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "116227",
+                  "guid": "bb652e06-f898-3c66-a2af-8e580872e571",
+                  "uid": "s:300~t:116227",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "LLWLW",
+                  "displayName": "Exeter Chiefs",
+                  "name": "Exeter Chiefs",
+                  "abbreviation": "EXE",
+                  "color": "999999",
+                  "score": "34",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/116227/exeter-chiefs",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/exeter-chiefs/rugby/player/caps.html?team=116227",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "LLWLW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/116227.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/116227.png"
+                },
+                {
+                  "id": "25898",
+                  "guid": "986aa7c5-98d0-347f-8e12-8444d613e3de",
+                  "uid": "s:300~t:25898",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "form": "WWLLW",
+                  "displayName": "Bath Rugby",
+                  "name": "Bath Rugby",
+                  "abbreviation": "BAT",
+                  "color": "000099",
+                  "score": "40",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/25898/bath-rugby",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/bath-rugby/rugby/player/caps.html?team=25898",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "WWLLW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25898.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/25898.png"
+                }
+              ],
+              "neutralSite": false,
+              "pccEventId": "604619",
+              "onDisneyNetwork": false,
+              "appLinks": []
+            },
+            {
+              "id": "604621",
+              "uid": "s:300~l:8007~e:604621~c:604621",
+              "guid": "46c55103-4fa3-34d5-bae6-c2ef5806505b",
+              "date": "2026-10-03T16:30:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "Gloucester Rugby vs Harlequins",
+              "shortName": "GLO VS HAR",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/match/_/gameId/604621/league/267979/harlequins-gloucester-rugby",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "matchstats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/matchstats/_/gameId/604621/league/267979",
+                  "text": "Match Stats"
+                }
+              ],
+              "gamecastAvailable": false,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "wallclockAvailable": false,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "604621",
+              "location": "Gloucester",
+              "season": 2027,
+              "seasonStartDate": "2026-08-30T04:00:00Z",
+              "seasonEndDate": "2027-07-01T03:59:00Z",
+              "seasonType": "1",
+              "seasonTypeHasGroups": true,
+              "group": {
+                "groupId": "1",
+                "name": "2025/26 Gallagher Premiership",
+                "abbreviation": "2025/26 Gallagher Premiership",
+                "shortName": "2025/26 Gallagher Premiership"
+              },
+              "link": "https://www.espn.com/rugby/match/_/gameId/604621/league/267979/harlequins-gloucester-rugby",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "1'",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "1'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "FT",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "25901",
+                  "guid": "40ae9b47-b574-3079-b5c7-bf26e9073026",
+                  "uid": "s:300~t:25901",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": false,
+                  "form": "LLWWW",
+                  "displayName": "Harlequins",
+                  "name": "Harlequins",
+                  "abbreviation": "HAR",
+                  "color": "CCCCCC",
+                  "score": "0",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/25901/harlequins",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/harlequins/rugby/player/caps.html?team=25901",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "LLWWW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25901.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/25901.png"
+                },
+                {
+                  "id": "25900",
+                  "guid": "5afd2f7c-b682-392b-9d6e-66b2fda04e65",
+                  "uid": "s:300~t:25900",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": true,
+                  "form": "WWWLW",
+                  "displayName": "Gloucester Rugby",
+                  "name": "Gloucester Rugby",
+                  "abbreviation": "GLO",
+                  "color": "FF0000",
+                  "score": "48",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/25900/gloucester-rugby",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/gloucester-rugby/rugby/player/caps.html?team=25900",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "WWWLW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25900.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/25900.png"
+                }
+              ],
+              "neutralSite": false,
+              "pccEventId": "604621",
+              "onDisneyNetwork": false,
+              "appLinks": []
+            },
+            {
+              "id": "604623",
+              "uid": "s:300~l:8007~e:604623~c:604623",
+              "guid": "2cf443cd-7017-38a4-bb71-37a3a63698f5",
+              "date": "2026-10-04T14:00:00Z",
+              "timeValid": true,
+              "recent": false,
+              "name": "Saracens vs Sale Sharks",
+              "shortName": "SAR VS SAL",
+              "links": [
+                {
+                  "rel": [
+                    "summary",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/match/_/gameId/604623/league/267979/sale-sharks-saracens",
+                  "text": "Summary"
+                },
+                {
+                  "rel": [
+                    "matchstats",
+                    "desktop",
+                    "event"
+                  ],
+                  "href": "https://www.espn.com/rugby/matchstats/_/gameId/604623/league/267979",
+                  "text": "Match Stats"
+                }
+              ],
+              "gamecastAvailable": false,
+              "playByPlayAvailable": true,
+              "commentaryAvailable": false,
+              "wallclockAvailable": false,
+              "fauxcastAvailable": false,
+              "onWatch": false,
+              "competitionId": "604623",
+              "location": "London",
+              "season": 2027,
+              "seasonStartDate": "2026-08-30T04:00:00Z",
+              "seasonEndDate": "2027-07-01T03:59:00Z",
+              "seasonType": "1",
+              "seasonTypeHasGroups": true,
+              "group": {
+                "groupId": "1",
+                "name": "2025/26 Gallagher Premiership",
+                "abbreviation": "2025/26 Gallagher Premiership",
+                "shortName": "2025/26 Gallagher Premiership"
+              },
+              "link": "https://www.espn.com/rugby/match/_/gameId/604623/league/267979/sale-sharks-saracens",
+              "status": "post",
+              "summary": "FT",
+              "period": 2,
+              "clock": "1'",
+              "fullStatus": {
+                "clock": 0,
+                "displayClock": "1'",
+                "period": 2,
+                "displayPeriod": "2nd",
+                "type": {
+                  "id": "3",
+                  "name": "STATUS_FINAL",
+                  "state": "post",
+                  "completed": true,
+                  "description": "FT",
+                  "detail": "FT",
+                  "shortDetail": "FT"
+                }
+              },
+              "competitors": [
+                {
+                  "id": "25908",
+                  "guid": "48e36169-4f0d-3139-bdf5-bf91e7aa43aa",
+                  "uid": "s:300~t:25908",
+                  "type": "team",
+                  "order": 1,
+                  "homeAway": "away",
+                  "winner": true,
+                  "form": "WLLWW",
+                  "displayName": "Sale Sharks",
+                  "name": "Sale Sharks",
+                  "abbreviation": "SAL",
+                  "color": "003366",
+                  "score": "21",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/25908/sale-sharks",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/sale-sharks/rugby/player/caps.html?team=25908",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "WLLWW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25908.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/25908.png"
+                },
+                {
+                  "id": "25909",
+                  "guid": "e91b0d9b-30ed-3c14-9ea8-0616e607c789",
+                  "uid": "s:300~t:25909",
+                  "type": "team",
+                  "order": 0,
+                  "homeAway": "home",
+                  "winner": false,
+                  "form": "LWWLW",
+                  "displayName": "Saracens",
+                  "name": "Saracens",
+                  "abbreviation": "SAR",
+                  "color": "CC0000",
+                  "score": "17",
+                  "isNational": false,
+                  "links": [
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "clubhouse",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://www.espn.com/rugby/team/_/id/25909/saracens",
+                      "text": "Clubhouse",
+                      "shortText": "Clubhouse",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    },
+                    {
+                      "language": "en-US",
+                      "rel": [
+                        "caps",
+                        "desktop",
+                        "team"
+                      ],
+                      "href": "https://en.espn.co.uk/saracens/rugby/player/caps.html?team=25909",
+                      "text": "Caps",
+                      "shortText": "Caps",
+                      "isExternal": false,
+                      "isPremium": false,
+                      "isHidden": false
+                    }
+                  ],
+                  "record": "LWWLW",
+                  "records": [],
+                  "group": "1",
+                  "logo": "https://a.espncdn.com/i/teamlogos/rugby/teams/500/25909.png",
+                  "logoDark": "https://a.espncdn.com/i/teamlogos/rugby/teams/500-dark/25909.png"
+                }
+              ],
+              "neutralSite": false,
+              "pccEventId": "604623",
+              "onDisneyNetwork": false,
+              "appLinks": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
